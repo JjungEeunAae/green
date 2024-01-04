@@ -1,0 +1,13 @@
+package ex03;
+
+public class Ex10 {
+	public static void main(String[] args) {
+		/*
+		 * 실수는 소수 두번째
+		 * 숫자를 입력받아 소수 둘째자리까지만 출력해라
+		 * 
+		 * ex) 23.456 -> 23.45
+		 * 	   11.132 -> 11.13
+		 */
+	}
+}

@@ -1,0 +1,13 @@
+package ex03;
+
+/*
+ *	string 5 
+ *
+ * 	stringstringstringstringstring
+ * 
+ */
+public class Ex01 {
+	public static void main(String[] args) {
+		
+	}
+}

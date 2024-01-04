@@ -1,0 +1,15 @@
+package ex03;
+
+public class Ex08 {
+	public static void main(String[] args) {
+		double d = 85.4d;
+		int score = (int)d;
+		System.out.println("score = " + score);
+		System.out.println("d = " + d); 
+		
+		/* int -> char unicode A => 65 , 65 => A
+		 * 실수 -> 함수
+		 * double -> int : 소수점을 버리고 형변환된다.
+		 */
+	}
+}

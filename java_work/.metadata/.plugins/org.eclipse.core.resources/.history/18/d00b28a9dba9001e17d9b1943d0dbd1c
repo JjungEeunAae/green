@@ -1,0 +1,19 @@
+package ex03;
+
+public class Ex07 {
+	public static void main(String[] args) {
+		char aa = 'A';
+		System.out.println(aa);
+		System.out.println((int)aa);
+		int bb = (int) aa;
+		System.out.println(bb);
+		char cc = (char) bb;
+		System.out.println(cc);
+		
+		// 1byte -128 ~ 127
+		// 오버플로우 : 지정된 범위를 벗어나는 것
+		byte kk = 127;
+		System.out.println(kk + 1);
+		System.out.println((byte)(kk + 1));
+	}
+}

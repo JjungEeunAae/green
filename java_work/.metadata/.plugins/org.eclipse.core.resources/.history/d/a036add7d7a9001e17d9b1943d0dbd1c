@@ -1,0 +1,16 @@
+package ex03;
+
+public class Ex05 {
+	public static void main(String[] args) {
+		
+	}
+	
+	public int solution(int n, int k) {
+        int answer = n / 10;
+        System.out.println(answer);
+//        if() {
+//        	
+//        }
+        return answer;
+    }
+}

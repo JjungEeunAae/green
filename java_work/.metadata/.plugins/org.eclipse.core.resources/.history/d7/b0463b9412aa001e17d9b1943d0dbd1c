@@ -1,0 +1,12 @@
+package ex01;
+
+public class Programmers {
+	public static void main(String[] args) {
+		int[] arr = {1, 2, 3, 4, 5};
+		System.out.println(solution(arr));
+	}
+	public int[] solution(int[] numbers) {
+        int[] answer = {};
+        return answer;
+    }
+}

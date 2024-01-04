@@ -1,0 +1,17 @@
+package ex03;
+
+public class Ex05 {
+	public static void main(String[] args) {
+		System.out.println(solution(64,6));
+		
+	}
+	
+	public static int solution(int n, int k) {
+        double answer = Math.floor(n / 10);
+        System.out.println(answer);
+//        if() {
+//        	
+//        }
+        return (int)answer;
+    }
+}
