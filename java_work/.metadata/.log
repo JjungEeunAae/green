@@ -782,3 +782,9 @@ java.io.FileNotFoundException: D:\Students\eclipse\plugins\org.eclipse.justj.ope
 	at org.eclipse.core.internal.events.AutoBuildJob.doBuild(AutoBuildJob.java:207)
 	at org.eclipse.core.internal.events.AutoBuildJob.run(AutoBuildJob.java:300)
 	at org.eclipse.core.internal.jobs.Worker.run(Worker.java:63)
+
+!ENTRY org.eclipse.equinox.security 1 0 2024-01-04 12:34:28.439
+!MESSAGE New keyring password generated. 
+
+!ENTRY org.eclipse.m2e.logback.appender 2 0 2024-01-04 12:36:08.973
+!MESSAGE close() called when useCnt is already zero for Repository[C:\Users\user\git\green_240104\.git]
