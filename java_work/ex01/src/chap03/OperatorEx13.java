@@ -4,7 +4,7 @@ class OperatorEx13 {
 			char c1 = 'a';
 
 //			char c2 =  c1+1;           // ���� 5 : ������ �����߻�!!!
-			char c2 = 'a'+1;           // ���� 6 : ������ ��������
+			char c2 = (char)('a'+1);           // ���� 6 : ������ ��������
 
             System.out.println(c2); 
       } 

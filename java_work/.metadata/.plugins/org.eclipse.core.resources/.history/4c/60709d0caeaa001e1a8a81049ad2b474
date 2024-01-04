@@ -1,0 +1,17 @@
+package ex04;
+
+public class Ex04 {
+	public static void main(String[] args) {
+		int a = 10;
+		int b = 30;
+		
+		byte c = (byte)(a*b);
+		System.out.println(c);
+		
+		int d = 1000000;
+		int e = 2000000;
+		
+		long f = (long)d * e;
+		System.out.println(f);
+	}
+}
