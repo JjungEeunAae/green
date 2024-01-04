@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>position_2</title>
+    <style>
+        #p {
+            /* 부모 블럭 */
+            position: relative;
+            left: 100px;
+            width: 200px;
+            height: 200px;
+            background-color: darkcyan;
+        }
+        #c {
+            /* 자식 블럭 */
+            position: absolute;
+            bottom: 0;
+            width: 150px;
+            height: 150px;
+            background-color: darkorange;
+        }
+    </style>
+</head>
+<body>
+    <div id="p">
+        <p>relative attribute</p>
+        <div id="c">
+            <p>absolute attribute</p>
+        </div>
+    </div>
+</body>
+</html>

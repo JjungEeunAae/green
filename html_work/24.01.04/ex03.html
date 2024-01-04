@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>position_3</title>
+    <style>
+        #header {
+            border: 1px solid rgb(199, 206, 158);
+            background-color: beige;
+            width: 1000px;
+            margin: 0 auto;
+            /* 자식들이 absolute면 높이를 자동으로 계산을 못한다. */
+            height: 250px;
+            position: relative;
+        }
+        #left {
+            position: absolute;
+            background-color: darkslategray;
+            /* 부모가 relative가 아니면 body를 부모로 인식한다. */
+            left: 0;
+        }
+        #center {
+            position: absolute;
+            background-color: deepskyblue;
+            width: 700px;
+            left: 130px;
+        }
+        #right {
+            position: absolute;
+            background-color: cornflowerblue;
+            right: 0;
+        }
+    </style>
+</head>
+<body>
+    <div id="header">
+        <div id="left">
+            <img src="../24.01.02/img.jpg" alt="logo" width="85px">
+        </div>
+        <div id="center">
+            <h1>그린컴퓨터학원</h1>
+        </div>
+        <div id="right">
+            <p>010-0000-1111</p>
+            <p>정모양</p>
+        </div>
+    </div>
+</body>
+</html>
