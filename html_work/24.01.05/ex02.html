@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>선택자2</title>
+    <style>
+        * { margin: 0; box-sizing: content-box;}
+        #header {
+            background-color: darkolivegreen;
+            width: 800px;
+            margin: 10px auto;
+        }
+        #wrap {
+            width: 800px;
+            margin: 0 auto;
+            background-color: darkslateblue;
+            /* 자식이 float이 있으면 overflow가 있어야 하는게 정석이라고 한다.*/
+            overflow: hidden;
+            height: 400px;
+        }
+        #aside {
+            width: 200px;
+            float: left;
+            background-color: darkorange;
+        }
+        #content {
+            width: 600px;
+            float: left;
+            background-color: darkseagreen;
+        }
+        #footer {
+            width: 100px;
+            background-color: darkred;
+        }
+    </style>
+</head>
+<body>
+    <div id="header">
+        <h1>Header</h1>
+    </div>
+    <div id="wrap">
+        <div id="aside">
+            <h1>aside</h1>
+        </div>
+        <div id="content">
+            <h1>content</h1>
+        </div>
+    </div>
+    <div id="footer">
+        <h1>footer</h1>
+    </div>
+</body>
+</html>
