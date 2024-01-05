@@ -4,6 +4,13 @@ class OperatorEx15 {
             char lowerCase = 'a'; 
             char upperCase = (char)(lowerCase - 32); 
 
-            System.out.println(upperCase); 
+            //2024.01.05
+        	System.out.println((int)'a');
+        	System.out.println((int)'A');
+            
+            char z = 'z';
+            System.out.println(z);
+            System.out.println((char)(z-32));
+            System.out.println(upperCase);
       } 
 } 

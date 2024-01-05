@@ -1,14 +1,40 @@
 package ex01;
 
-import java.util.Scanner;
-
 public class Programmers {
 	public static void main(String[] args) {
-		Scanner sc = new Scanner(System.in);
-        int a = sc.nextInt();
-        int b = sc.nextInt();
-
-        System.out.println(a + " + " + b + " = " + (a + b));
-        System.out.printf("%d + %d = %d", a, b, (a+b));
+		System.out.println(solution(">", "!", 41, 78));
+    }
+	
+	public static int solution(String ineq, String eq, int n, int m) {
+		int answer = 0;
+		
+		if(ineq.equals("<") && eq.equals("=")) {
+			if(n <= m) {
+				answer = 1;
+			} else {
+				answer = 0;
+			}
+		} else if(ineq.equals(">") && eq.equals("=")) {
+			if(n >= m) {
+				answer = 1;
+			} else {
+				answer = 0;
+			}
+		} else if(ineq.equals(">") && eq.equals("!")) {
+			if(n > m) {
+				answer = 1;
+			} else {
+				answer = 0;
+			}
+		} else if(ineq.equals("<") && eq.equals("!")) {
+			if(n < m) {
+				answer = 1;
+			} else {
+				answer = 0;
+			}
+		};
+        return answer;
     }
 }
+
+
