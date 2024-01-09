@@ -6,10 +6,13 @@ class FlowEx21 {
 				if(i==j) {
 					System.out.printf("[%d,%d]", i, j);			
 				} else {
-					System.out.printf("%5c", ' ');			
+					// 문자를 5번 실행해라
+					System.out.printf("%5c", ' ');
+					// 위의 코드를 대신 할 수 있다
+					// System.out.print("\t");
 				}
 			}
 			System.out.println();
 		}
-	} // main�� ��
+	}
 }
