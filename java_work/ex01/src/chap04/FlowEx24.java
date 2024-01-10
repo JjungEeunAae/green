@@ -3,8 +3,6 @@ class FlowEx24 {
 	public static void main(String[] args) { 
 		int i=11;
 
-		System.out.println("��, ���� ī��Ʈ�ٿ��� �����մϴ�.");
-
 		while(i--!=0) {
 			System.out.println(i);
 

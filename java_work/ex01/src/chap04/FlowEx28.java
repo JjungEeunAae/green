@@ -6,22 +6,22 @@ class FlowEx28 {
 		int input  = 0;
 		int answer = 0;
 
-		answer = (int)(Math.random() * 100) + 1; // 1~100������ ������ ���� ����
+		answer = (int)(Math.random() * 100) + 1;
 		Scanner scanner = new Scanner(System.in);
 
 		do {
-			System.out.print("1�� 100������ ������ �Է��ϼ���.>");
+			System.out.print("1과 100사이의 정수를 입력하세요>");
 
 			String tmp = scanner.nextLine();
 			input = Integer.parseInt(tmp);
 
 			if(input > answer) {
-				System.out.println("�� ���� ���� �ٽ� �õ��غ�����.");	
+				System.out.println("더 작은 수로 다시 시도해봐");	
 			} else if(input < answer) {
-				System.out.println("�� ū ���� �ٽ� �õ��غ�����.");			
+				System.out.println("더 큰수로 다시 시도해봐");			
 			}
 		} while(input!=answer);
 
-		System.out.println("�����Դϴ�.");
+		System.out.println("정답!");
 	}
 }

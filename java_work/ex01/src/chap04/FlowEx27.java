@@ -5,11 +5,11 @@ class FlowEx27 {
 	public static void main(String[] args) { 
 		int num;
 		int sum = 0;
-		boolean flag = true;   // while���� ���ǽ����� ���� ����
+		boolean flag = true;
 
-		System.out.println("�հ踦 ���� ���ڸ� �Է��ϼ���.(�������� 0�� �Է�)");
+		System.out.println("합계를 구할 숫자를 입력하세요(끝내려면 0을 입력)");
 
-		while(flag) {    // flag�� ���� true�̹Ƿ� ���ǽ��� ���� �ȴ�.
+		while(flag) {    // flag의 값이 true이므로 조건식은 참이 된다.
 			System.out.print(">>");
 
 			Scanner scanner = new Scanner(System.in);
@@ -17,12 +17,12 @@ class FlowEx27 {
 			num = Integer.parseInt(tmp);  
 
 			if(num!=0) {  
-				sum += num; // num�� 0�� �ƴϸ�, sum�� ���Ѵ�.
+				sum += num;
 			} else {
-				flag = false;   // num�� 0�̸�, flag�� ���� false�� ����.
+				flag = false;
 			}
-		} // while���� ��
+		}
 
-		System.out.println("�հ�:"+ sum);
+		System.out.println("합계 : "+ sum);
 	}
 }
