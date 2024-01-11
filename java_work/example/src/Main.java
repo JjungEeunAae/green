@@ -26,5 +26,7 @@ public class Main {
         for(int i = 0 ; i < lottoNumbar.length ; i++) {
             System.out.print(lottoNumbar[i] + " ");
         };
+
+        System.out.println("dd");
     }
 }
