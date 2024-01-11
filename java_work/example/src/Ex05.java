@@ -35,10 +35,10 @@ public class Ex05 {
             english += Integer.parseInt(all[i][3]);
         };
 
-//        System.out.println("국어 평균 : " + (korean/ all.length));
-//        System.out.println("수학 평균 : " + (math/ all.length));
-//        System.out.println("영어 평균 : " + (english/ all.length));
-//        System.out.println("총 평균 : " + ((korean+english+math) / (all.length*all.length)));
+        System.out.println("국어 평균 : " + (korean/ all.length));
+        System.out.println("수학 평균 : " + (math/ all.length));
+        System.out.println("영어 평균 : " + (english/ all.length));
+        System.out.println("총 평균 : " + ((korean+english+math) / (all.length*all.length)));
 
         int stu_total[] = new int[5];     // 학생 5명의 과목 총 점수를 확인하라
         for(int i = 0 ; i < all.length ; i++) {
@@ -46,8 +46,12 @@ public class Ex05 {
                 stu_total[i] += Integer.parseInt(all[i][j]);
             };
         };
-//        System.out.println(
-//                "성적 상위권 : " + Arrays.toString(stu_total)); // [270, 180, 195, 237, 235]
+        System.out.println(
+                "모든 학생의 점수를 담았다 > " + Arrays.toString(stu_total)); // [270, 180, 195, 237, 235]
+
+        for(int i = 0 ; i < all.length ; i++) {
+            System.out.println(student_name[i] + "의 총 점수는 " + stu_total[i] + "입니다.");
+        };
 
         // 내림차순
         // int[] 배열을 내림차순을 정렬할 때는 Integer[]로 바꿔줘야 한다.
