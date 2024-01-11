@@ -55,7 +55,7 @@ public class Ex06 {
 					arr[j] = tmp;
 				}
 			}
-		}
+		};
 		
 		System.out.println(Arrays.toString(arr));
 		
