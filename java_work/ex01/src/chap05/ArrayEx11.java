@@ -5,7 +5,7 @@ class ArrayEx11 {
 		int[] counter = new int[10];
 
 		for (int i=0; i < numArr.length ; i++ ) {
-			numArr[i] = (int)(Math.random() * 10); // 0~9�� ������ ���� �迭�� ����
+			numArr[i] = (int)(Math.random() * 10);
 			System.out.print(numArr[i]);
 		}
 		System.out.println();
@@ -15,7 +15,7 @@ class ArrayEx11 {
 		}
 
 		for (int i=0; i < numArr.length ; i++ ) {
-			System.out.println( i +"�� ���� :"+ counter[i]);
+			System.out.println( i +"의 개수 :"+ counter[i]);
 		}
-	} // main�� ��
+	}
 }
