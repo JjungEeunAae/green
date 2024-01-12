@@ -1,46 +1,59 @@
 package ex01;
 
-import java.util.Arrays;
+import java.util.*;
 
 public class Programmers {
 	public static void main(String[] args) {
-		int[] arr = {0, 1, 0, 10, 0, 1, 0, 10, 0, -1, -2, -1};
-		System.out.println(solution(arr));
+		int[] arr = {0, 1, 2, 4, 3};
+		int[][] arr_two = {{0,4,2},{0,3,2},{0,2,2}};
+        System.out.println(solution(arr,arr_two));
+	
+		Scanner sc = new Scanner(System.in);
+		
+		int x[] = new int[30];
+		
+		for(int i = 0 ; i < 28 ; i++) {
+			x[sc.nextInt()-1] = 1;
+		};
+		System.out.println(Arrays.toString(x));
+//		
+//		for(int i = 0 ; i < x.length ; i++) {
+//			if(x[i] == 0) {
+//				System.out.println(i+1);
+//			}
+//		}
+		
     }
 	
-    public static String solution(int[] numLog) {
-        String answer = "";
-        int a = 0;
-        for(int i = numLog.length-1 ; i > 0 ; i--) {
-        	// 
-//        	System.out.print("numLog[i] : " + numLog[i] + ", ");
-//        	System.out.print("numLog[i+1]  " + numLog[i-1] + " ");
-        	// numLog[i] 값이 numLog[i-1] 값 보다 클 때
-        	if(numLog[i] > numLog[i-1]) {
-//        		System.out.println(">>>> i가 i-1 값이 더 크다!!!");
-        		
-        		// numLog[i]와 numLog[i-1] 차이가 몇이냐를 알아야 한다.
-//        		System.out.print("여길봐!!!!>>>   " + numLog[i] + "\n");
-        		if(numLog[i] - 1 == numLog[i-1]) {
-//        			System.out.println("numLog[i] - 1 >> " + (numLog[i] - 1) + "\n");
-        			answer += "w";
-        		} else if(numLog[i] - 10 == numLog[i-1]) {
-//        			System.out.println("numLog[i] - 10 >> " + (numLog[i] - 10) + "\n");
-        			answer += "d";
-        		} 
-        	} else {
-//        		System.out.println(">>>> i가 i-1 값이 더 작다");
-        		if(numLog[i] + 10 == numLog[i-1]) {
-        			answer += "a";
-        		} else if(numLog[i] + 1 == numLog[i-1]){
-        			answer += "s";
+	public static int[] solution(int[] arr, int[][] queries) {
+        int[] answer = new int[queries.length];
+        // [시작위치, 배열을 끝낼 위치, 이 자리에 있는 숫자보다 크면서 가장 작은 값]
+        for(int i = 0 ; i < queries.length ; i++) {
+        	int min = 1000000;
+        	int cnt = 0;
+        	for(int j = queries[i][0] ; j < queries[i][1]+1 ; j++) {
+        		// k보다 큰놈만 뽑아
+        		if(arr[j] > queries[i][2]) {
+        			if(min > arr[j]) {
+        				min = arr[j];
+        			}
+        		} else {
+        			cnt++;
         		};
+        		
+        		System.out.println("min " + min);
+        	};
+        	
+        	System.out.println(i + ", " + "min, " + min + ", cnt " + cnt);
+//        	System.out.println("cnt > " + cnt );
+//        	System.out.println("계산값 : " + (queries[i][1]-queries[i][0]+1));
+        	if(queries[i][1] - queries[i][0] + 1 == cnt) {
+        		answer[i] = -1;
+        	} else {
+        		answer[i] = min;
         	}
-        };
-        char[] test = answer.toCharArray();
-        StringBuilder tmp = new StringBuilder(new String(test));
-        answer = tmp.reverse().toString();
-        
+        }
+//        System.out.println(Arrays.toString(answer));
         return answer;
     }
 }
