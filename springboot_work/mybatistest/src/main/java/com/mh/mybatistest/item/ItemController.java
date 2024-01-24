@@ -6,11 +6,11 @@ import org.springframework.web.bind.annotation.RestController;
 
 @RestController
 public class ItemController {
-    @Autowired ItemRepository item;
-
-    @GetMapping("item")
-    public String doItem() {
-        item.save(new Item("looong",112222222L));
-        return "test";
-    }
+//    @Autowired ItemRepository item;
+//
+//    @GetMapping("item")
+//    public String doItem() {
+//        item.save(new Item("looong",112222222L));
+//        return "test";
+//    }
 }

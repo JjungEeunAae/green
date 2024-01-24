@@ -1,6 +1,8 @@
 package org.example;
 
-import lombok.*;
+import lombok.AllArgsConstructor;
+import lombok.Getter;
+import lombok.Setter;
 
 @Getter             // setter method
 @Setter             // getter method
@@ -8,6 +10,6 @@ import lombok.*;
 public class Member {
     private String email;
     private String name;
-    private String addr;
+    private String address;
     private String password;
 }
