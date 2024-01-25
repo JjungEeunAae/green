@@ -3,10 +3,7 @@ package org.example;
 import org.example.util.MyCLI;
 
 import javax.xml.transform.Result;
-import java.sql.Connection;
-import java.sql.DriverManager;
-import java.sql.PreparedStatement;
-import java.sql.ResultSet;
+import java.sql.*;
 
 public class MemberDB {
     public MyCLI cli = new MyCLI();
@@ -15,8 +12,9 @@ public class MemberDB {
         boolean result = findByEmail(mem.getEmail());
 
         if(!result) {
+            Connection con = null;
             try {
-                Connection con = DriverManager.getConnection(DBINFO.url, DBINFO.user, DBINFO.pw);
+                con = DriverManager.getConnection(DBINFO.url, DBINFO.user, DBINFO.pw);
                 PreparedStatement pstmt = con.prepareStatement("insert into member " +
                         "(reg_time, update_time, created_by, modified_by, address, email, name, password, role) " +
                         "values " +
@@ -26,10 +24,18 @@ public class MemberDB {
                 pstmt.setString(3, mem.getName());
                 pstmt.setString(4, mem.getPassword());
                 pstmt.executeUpdate();
-
             } catch (Exception e) {
                 e.printStackTrace();
+            } finally {
+                if(null != con) {
+                    try {
+                        con.close();
+                    } catch (SQLException e) {
+                        e.printStackTrace();
+                    }
+                }
             }
+
             System.out.println("입력되었습니다.");
         } else {
             System.err.println("중복된 아이디가 있습니다.");
@@ -55,7 +61,7 @@ public class MemberDB {
         return false;
     }
 
-    public boolean login() {
+    public Member login() {
         Member mem = cli.loginMember();
 
         try {
@@ -67,13 +73,14 @@ public class MemberDB {
             ResultSet rs = pre.executeQuery();
 
             if(rs.next()) {
+                mem.setRole(rs.getString("role"));
                 System.out.println("로그인 성공!");
-                return true;
+                return mem;
             }
         } catch (Exception e) {
             e.printStackTrace();
         }
 
-        return false;
+        return null;
     }
 }

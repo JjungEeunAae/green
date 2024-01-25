@@ -17,7 +17,12 @@ public class MyCLI {
         System.out.println("비번 입력");
         String pw = sc.nextLine();
 
-        return new Member(email, name, addr, pw);
+        return Member.builder()
+                .email(email)
+                .address(addr)
+                .name(name)
+                .password(pw)
+                .build();
     }
 
     public Member loginMember() {
@@ -26,6 +31,9 @@ public class MyCLI {
         System.out.println("비번 입력");
         String pw = sc.nextLine();
 
-        return new Member(email, null, null, pw);
+        return Member.builder()
+                .email(email)
+                .password(pw)
+                .build();
     }
 }
