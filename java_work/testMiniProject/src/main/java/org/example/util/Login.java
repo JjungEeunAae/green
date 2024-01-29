@@ -1,6 +1,6 @@
 package org.example.util;
 
-import org.example.Member;
+import org.example.member.Member;
 
 public class Login {
     // DBmember를 담는 것

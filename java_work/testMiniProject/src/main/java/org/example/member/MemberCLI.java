@@ -1,10 +1,8 @@
-package org.example.util;
-
-import org.example.Member;
+package org.example.member;
 
 import java.util.Scanner;
 
-public class MyCLI {
+public class MemberCLI {
     Scanner sc = new Scanner(System.in);
 
     public Member inputMember() {

@@ -1,12 +1,11 @@
-package org.example;
+package org.example.member;
 
-import org.example.util.MyCLI;
+import org.example.DBINFO;
 
-import javax.xml.transform.Result;
 import java.sql.*;
 
 public class MemberDB {
-    public MyCLI cli = new MyCLI();
+    public MemberCLI cli = new MemberCLI();
     public void insert() {
         Member mem = cli.inputMember();
         boolean result = findByEmail(mem.getEmail());
@@ -73,9 +72,12 @@ public class MemberDB {
             ResultSet rs = pre.executeQuery();
 
             if(rs.next()) {
+                mem.setName(rs.getString("name"));
                 mem.setRole(rs.getString("role"));
                 System.out.println("로그인 성공!");
                 return mem;
+            } else {
+                System.err.println("로그인 실패, 이메일과 패스워드를 확인하세요");
             }
         } catch (Exception e) {
             e.printStackTrace();
