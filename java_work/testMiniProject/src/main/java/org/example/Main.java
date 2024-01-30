@@ -43,7 +43,8 @@ public class Main {
                     Login.member = null;
                     System.out.println("로그아웃 되었습니다.");
                 }
-            } else if(select == 8 && Login.member != null && Login.getRole().equalsIgnoreCase("admin")) {
+            } else if(select == 8 && Login.member != null
+                        && Login.getRole().equalsIgnoreCase("admin")) {
                 try {
                     id.insert();
                     System.out.println("상품등록 완료");

@@ -11,5 +11,4 @@ public class Login {
     public static String getRole() {
         return member.getRole();
     }
-
 }
