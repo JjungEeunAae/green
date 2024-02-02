@@ -34,12 +34,10 @@ public class MemberDB {
                     }
                 }
             }
-
             System.out.println("입력되었습니다.");
         } else {
             System.err.println("중복된 아이디가 있습니다.");
         }
-
     }
 
     // 아이디 중복 확인
@@ -74,6 +72,9 @@ public class MemberDB {
             if(rs.next()) {
                 mem.setName(rs.getString("name"));
                 mem.setRole(rs.getString("role"));
+                mem.setMember_id(rs.getLong("member_id"));
+                mem.setAddress(rs.getString("address"));
+                mem.setName(rs.getString("name"));
                 System.out.println("로그인 성공!");
                 return mem;
             } else {
@@ -82,7 +83,6 @@ public class MemberDB {
         } catch (Exception e) {
             e.printStackTrace();
         }
-
         return null;
     }
 }

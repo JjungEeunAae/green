@@ -8,6 +8,7 @@ import lombok.*;
 @ToString
 @Builder            // 객체생성
 public class Member {
+    private Long member_id;
     private String email;
     private String name;
     private String address;

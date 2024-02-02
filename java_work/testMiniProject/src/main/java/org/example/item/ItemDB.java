@@ -3,10 +3,9 @@ package org.example.item;
 import org.example.DBINFO;
 import org.example.util.Login;
 
-import java.sql.Connection;
-import java.sql.DriverManager;
-import java.sql.PreparedStatement;
-import java.sql.SQLException;
+import java.sql.*;
+import java.util.ArrayList;
+import java.util.List;
 
 public class ItemDB {
     private ItemCLI icli = new ItemCLI();
@@ -39,6 +38,45 @@ public class ItemDB {
         } finally {
             conn.close();
             stmt.close();
+        }
+    }
+
+    public void select() {
+        List<Item> list = new ArrayList<>();
+        Connection con = null;
+        PreparedStatement stmt = null;
+        ResultSet rs = null;
+
+        try {
+            con = DriverManager.getConnection(DBINFO.url, DBINFO.user, DBINFO.pw);
+            stmt = con.prepareStatement("SELECT * FROM item");
+            rs = stmt.executeQuery();
+
+            while (rs.next()) {
+                list.add(
+                        new Item(rs.getLong("item_id"),
+                                rs.getString("reg_time"),
+                                rs.getString("update_time"),
+                                rs.getString("created_by"),
+                                rs.getString("modified_by"),
+                                rs.getString("item_detail"),
+                                rs.getString("item_nm"),
+                                rs.getString("item_sell_status"),
+                                rs.getInt("price"),
+                                rs.getInt("stock_number"))
+                );
+            }
+            System.out.println(list);
+        } catch (Exception e) {
+            e.printStackTrace();
+        } finally {
+            try {
+                rs.close();
+                stmt.close();
+                con.close();
+            } catch (SQLException e) {
+                e.printStackTrace();
+            }
         }
     }
 }
