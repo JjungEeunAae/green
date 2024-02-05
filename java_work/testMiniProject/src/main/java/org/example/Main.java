@@ -11,11 +11,11 @@ import java.sql.SQLException;
 import java.util.Scanner;
 
 public class Main {
+        public static MemberDB mem = new MemberDB();
+        public static ItemDB    id = new ItemDB();
+        public static CartDB    cd = new CartDB();
+        public static  OrderDB   od = new OrderDB();
     public static void main(String[] args) {
-        MemberDB mem = new MemberDB();
-        ItemDB    id = new ItemDB();
-        CartDB    cd = new CartDB();
-        OrderDB   od = new OrderDB();
 
         while (true) {
             int select = 0;
@@ -47,16 +47,21 @@ public class Main {
                     Login.member = null;
                     System.out.println("로그아웃 되었습니다.");
                 }
-            } else if(select == 4) {
+            } else if(select == 4) {    // 물품보기
               id.select();
-            } else if(select == 5) {
+            } else if(select == 5) {    // 장바구니
                 if(Login.login) {
                     while (true) {
                         int cartSelect = printMenuCart();
                         if(cartSelect == 1) {
-                            // 등록
+                            cd.insert();    // 장바구니 등록
+                            cd.insertItem();// 장바구니 아이템 넣는 로직
+
+                            // 없는 상품을 선택할 시 등록 종료
+                            // 아니면 상품 보여주면서 계속 상품 등록
                         } else if(cartSelect == 5) {
                             // 종료
+                            System.out.println("장바구니를 종료합니다.");
                             break;
                         }
                     }
@@ -79,11 +84,10 @@ public class Main {
         }
     }
 
-    // 로그인이 되었을 때 보여주는
     public static int printMenuCart() {
         Scanner sc = new Scanner(System.in);
 
-        System.out.println("1.등록 | 2.수정   | 3.삭제");
+        System.out.println("1.등록 | 2.수정 | 3.삭제");
         System.out.println("4.목록 | 5.뒤로");
         int menu = sc.nextInt();
         return menu;
