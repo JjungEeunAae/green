@@ -1,0 +1,17 @@
+D:\Students\cs_work\EX240208\obj\Debug\net8.0-windows\EX240208.Form1.resources
+D:\Students\cs_work\EX240208\obj\Debug\net8.0-windows\EX240208.csproj.GenerateResource.cache
+D:\Students\cs_work\EX240208\obj\Debug\net8.0-windows\EX240208.GeneratedMSBuildEditorConfig.editorconfig
+D:\Students\cs_work\EX240208\obj\Debug\net8.0-windows\EX240208.AssemblyInfoInputs.cache
+D:\Students\cs_work\EX240208\obj\Debug\net8.0-windows\EX240208.AssemblyInfo.cs
+D:\Students\cs_work\EX240208\obj\Debug\net8.0-windows\EX240208.csproj.CoreCompileInputs.cache
+D:\Students\cs_work\EX240208\obj\Debug\net8.0-windows\EX240208.sourcelink.json
+D:\Students\cs_work\EX240208\bin\Debug\net8.0-windows\EX240208.exe
+D:\Students\cs_work\EX240208\bin\Debug\net8.0-windows\EX240208.deps.json
+D:\Students\cs_work\EX240208\bin\Debug\net8.0-windows\EX240208.runtimeconfig.json
+D:\Students\cs_work\EX240208\bin\Debug\net8.0-windows\EX240208.dll
+D:\Students\cs_work\EX240208\bin\Debug\net8.0-windows\EX240208.pdb
+D:\Students\cs_work\EX240208\obj\Debug\net8.0-windows\EX240208.dll
+D:\Students\cs_work\EX240208\obj\Debug\net8.0-windows\refint\EX240208.dll
+D:\Students\cs_work\EX240208\obj\Debug\net8.0-windows\EX240208.pdb
+D:\Students\cs_work\EX240208\obj\Debug\net8.0-windows\EX240208.genruntimeconfig.cache
+D:\Students\cs_work\EX240208\obj\Debug\net8.0-windows\ref\EX240208.dll
