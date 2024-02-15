@@ -1,0 +1,92 @@
+CREATE TABLE "member" (
+	"id"	varchar2		NOT NULL,
+	"pw"	varchar2		NULL,
+	"name"	varchar2		NULL,
+	"role"	varchar2		NULL,
+	"resign"	varchar2		NULL
+);
+
+CREATE TABLE "request" (
+	"request_no"	varchar2		NOT NULL,
+	"process_division"	varchar2		NULL,
+	"request_division"	varchar2		NULL,
+	"request_content"	varchar2		NULL,
+	"request_date"	varchar2		NULL,
+	"reason"	varchar2		NULL,
+	"request_ryn"	varchar2		NULL,
+	"id"	varchar2		NOT NULL,
+	"word_no"	varchar2		NOT NULL
+);
+
+COMMENT ON COLUMN "request"."process_division" IS ''수정','삭제'(공통코드)';
+
+COMMENT ON COLUMN "request"."request_division" IS '단어 고칠? 뜻 고칠?(공통코드)';
+
+COMMENT ON COLUMN "request"."request_content" IS '유저가 어드민에게 보내는 편지';
+
+COMMENT ON COLUMN "request"."reason" IS '요청이 반려된 이유(공통코드)';
+
+COMMENT ON COLUMN "request"."request_ryn" IS ''요청','성공,'실패'(공통코드)';
+
+CREATE TABLE "group" (
+	"group_no"	varchar2		NOT NULL,
+	"group_name"	varchar2		NULL
+);
+
+CREATE TABLE "group_detail" (
+	"group_detail_no"	varchar2		NOT NULL,
+	"group_detail_name"	varchar2		NULL,
+	"group_no"	varchar2		NOT NULL
+);
+
+COMMENT ON COLUMN "group_detail"."group_detail_no" IS '단어번호';
+
+CREATE TABLE "word" (
+	"word_no"	varchar2		NOT NULL,
+	"word"	varchar2		NULL,
+	"word_mean"	varchar2		NULL,
+	"insert_date"	varchar2		NULL,
+	"delete_yn"	varchar2		NULL
+);
+
+ALTER TABLE "member" ADD CONSTRAINT "PK_MEMBER" PRIMARY KEY (
+	"id"
+);
+
+ALTER TABLE "request" ADD CONSTRAINT "PK_REQUEST" PRIMARY KEY (
+	"request_no"
+);
+
+ALTER TABLE "group" ADD CONSTRAINT "PK_GROUP" PRIMARY KEY (
+	"group_no"
+);
+
+ALTER TABLE "group_detail" ADD CONSTRAINT "PK_GROUP_DETAIL" PRIMARY KEY (
+	"group_detail_no"
+);
+
+ALTER TABLE "word" ADD CONSTRAINT "PK_WORD" PRIMARY KEY (
+	"word_no"
+);
+
+ALTER TABLE "request" ADD CONSTRAINT "FK_member_TO_request_1" FOREIGN KEY (
+	"id"
+)
+REFERENCES "member" (
+	"id"
+);
+
+ALTER TABLE "request" ADD CONSTRAINT "FK_word_TO_request_1" FOREIGN KEY (
+	"word_no"
+)
+REFERENCES "word" (
+	"word_no"
+);
+
+ALTER TABLE "group_detail" ADD CONSTRAINT "FK_group_TO_group_detail_1" FOREIGN KEY (
+	"group_no"
+)
+REFERENCES "group" (
+	"group_no"
+);
+

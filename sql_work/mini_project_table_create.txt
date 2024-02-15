@@ -1,0 +1,70 @@
+CREATE TABLE "member" (
+	"id"	varchar2		NOT NULL,
+	"pw"	varchar2		NULL,
+	"name"	varchar2		NULL,
+	"role"	varchar2		NULL,
+	"resign"	varchar2		NULL
+);
+
+CREATE TABLE "request" (
+	"no"	varchar2		NOT NULL,
+	"division"	varchar2		NULL,
+	"word_no"	varchar2		NULL,
+	"request_date"	varchar2		NULL,
+	"reason"	varchar2		NULL,
+	"id"	varchar2		NOT NULL
+);
+
+COMMENT ON COLUMN "request"."division" IS ''수정','삭제'';
+
+COMMENT ON COLUMN "request"."word_no" IS '상세분류-상세코드';
+
+COMMENT ON COLUMN "request"."reason" IS '수정 또는 삭제 사유';
+
+CREATE TABLE "group" (
+	"group_no"	varchar2		NOT NULL,
+	"group_name"	varchar2		NULL
+);
+
+CREATE TABLE "group_detail" (
+	"group_detail_no"	varchar2		NOT NULL,
+	"group_detail_name"	varchar2		NULL,
+	"word"	varchar2		NULL,
+	"word_mean"	varchar2		NULL,
+	"insert_date"	varchar2		NULL,
+	"delete"	varchar2		NULL,
+	"group_no"	varchar2		NOT NULL
+);
+
+COMMENT ON COLUMN "group_detail"."group_detail_no" IS '단어번호';
+
+ALTER TABLE "member" ADD CONSTRAINT "PK_MEMBER" PRIMARY KEY (
+	"id"
+);
+
+ALTER TABLE "request" ADD CONSTRAINT "PK_REQUEST" PRIMARY KEY (
+	"no"
+);
+
+ALTER TABLE "group" ADD CONSTRAINT "PK_GROUP" PRIMARY KEY (
+	"group_no"
+);
+
+ALTER TABLE "group_detail" ADD CONSTRAINT "PK_GROUP_DETAIL" PRIMARY KEY (
+	"group_detail_no"
+);
+
+ALTER TABLE "request" ADD CONSTRAINT "FK_member_TO_request_1" FOREIGN KEY (
+	"id"
+)
+REFERENCES "member" (
+	"id"
+);
+
+ALTER TABLE "group_detail" ADD CONSTRAINT "FK_group_TO_group_detail_1" FOREIGN KEY (
+	"group_no"
+)
+REFERENCES "group" (
+	"group_no"
+);
+
