@@ -40,7 +40,6 @@ namespace ex240220_File_InputAndOutput.database
                 command.Parameters.Add(":text", text);
                 int rowId = command.ExecuteNonQuery();
                 Console.WriteLine($" {rowId} 행을 삽입했습니다!");
-
             }
             con.Close();
         }
@@ -58,13 +57,31 @@ namespace ex240220_File_InputAndOutput.database
                 OracleDataReader reader = command.ExecuteReader();
                 while(reader.Read())
                 {
-                    list.Add(reader.GetString(0));
+                    
+                    list.Add(reader["str"].ToString());
                 }
 
             }
             con.Close();
 
             return list;
+        }
+
+        internal void update(string selectedString, string updateStr)
+        {
+            string connectionString = "DATA SOURCE=127.0.0.1; User Id=hr; Password=1234";
+
+            // DB 연결...
+            OracleConnection con = new OracleConnection(connectionString);
+            con.Open();  // db 열기
+
+            // sql 구문 만들기
+            OracleCommand oracleCommand = new OracleCommand($" update filetb set str='{updateStr}' where str='{selectedString}'", con);
+
+            // 실행하기
+            oracleCommand.ExecuteNonQuery();
+
+            con.Close();  // db 닫기
         }
     }
 }
