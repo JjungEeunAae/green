@@ -30,15 +30,15 @@
         {
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
             this.button1 = new System.Windows.Forms.Button();
-            this.button2 = new System.Windows.Forms.Button();
-            this.button3 = new System.Windows.Forms.Button();
+            this.button_update = new System.Windows.Forms.Button();
+            this.button_delete = new System.Windows.Forms.Button();
             this.label1 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
             this.lastNameTextBox = new System.Windows.Forms.TextBox();
             this.firstNameTextBox = new System.Windows.Forms.TextBox();
-            this.button4 = new System.Windows.Forms.Button();
-            this.textBox4 = new System.Windows.Forms.TextBox();
+            this.button_select = new System.Windows.Forms.Button();
+            this.searchText = new System.Windows.Forms.TextBox();
             this.genderComboBox = new System.Windows.Forms.ComboBox();
             this.label4 = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
@@ -46,6 +46,7 @@
             // 
             // dataGridView1
             // 
+            this.dataGridView1.BackgroundColor = System.Drawing.SystemColors.ControlLightLight;
             this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dataGridView1.Dock = System.Windows.Forms.DockStyle.Bottom;
             this.dataGridView1.Location = new System.Drawing.Point(0, 137);
@@ -53,6 +54,7 @@
             this.dataGridView1.RowTemplate.Height = 23;
             this.dataGridView1.Size = new System.Drawing.Size(800, 313);
             this.dataGridView1.TabIndex = 0;
+            this.dataGridView1.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView1_CellClick);
             // 
             // button1
             // 
@@ -65,25 +67,27 @@
             this.button1.UseVisualStyleBackColor = true;
             this.button1.Click += new System.EventHandler(this.insert);
             // 
-            // button2
+            // button_update
             // 
-            this.button2.Font = new System.Drawing.Font("한컴 말랑말랑 Bold", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
-            this.button2.Location = new System.Drawing.Point(485, 57);
-            this.button2.Name = "button2";
-            this.button2.Size = new System.Drawing.Size(145, 74);
-            this.button2.TabIndex = 3;
-            this.button2.Text = "UPDATE";
-            this.button2.UseVisualStyleBackColor = true;
+            this.button_update.Font = new System.Drawing.Font("한컴 말랑말랑 Bold", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
+            this.button_update.Location = new System.Drawing.Point(485, 57);
+            this.button_update.Name = "button_update";
+            this.button_update.Size = new System.Drawing.Size(145, 74);
+            this.button_update.TabIndex = 3;
+            this.button_update.Text = "UPDATE";
+            this.button_update.UseVisualStyleBackColor = true;
+            this.button_update.Click += new System.EventHandler(this.button_update_Click);
             // 
-            // button3
+            // button_delete
             // 
-            this.button3.Font = new System.Drawing.Font("한컴 말랑말랑 Bold", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
-            this.button3.Location = new System.Drawing.Point(638, 57);
-            this.button3.Name = "button3";
-            this.button3.Size = new System.Drawing.Size(145, 74);
-            this.button3.TabIndex = 4;
-            this.button3.Text = "DELETE";
-            this.button3.UseVisualStyleBackColor = true;
+            this.button_delete.Font = new System.Drawing.Font("한컴 말랑말랑 Bold", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
+            this.button_delete.Location = new System.Drawing.Point(638, 57);
+            this.button_delete.Name = "button_delete";
+            this.button_delete.Size = new System.Drawing.Size(145, 74);
+            this.button_delete.TabIndex = 4;
+            this.button_delete.Text = "DELETE";
+            this.button_delete.UseVisualStyleBackColor = true;
+            this.button_delete.Click += new System.EventHandler(this.button_delete_Click);
             // 
             // label1
             // 
@@ -133,23 +137,24 @@
             this.firstNameTextBox.Size = new System.Drawing.Size(215, 28);
             this.firstNameTextBox.TabIndex = 10;
             // 
-            // button4
+            // button_select
             // 
-            this.button4.Font = new System.Drawing.Font("한컴 말랑말랑 Bold", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
-            this.button4.Location = new System.Drawing.Point(638, 25);
-            this.button4.Name = "button4";
-            this.button4.Size = new System.Drawing.Size(145, 28);
-            this.button4.TabIndex = 11;
-            this.button4.Text = "SELECT";
-            this.button4.UseVisualStyleBackColor = true;
+            this.button_select.Font = new System.Drawing.Font("한컴 말랑말랑 Bold", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
+            this.button_select.Location = new System.Drawing.Point(638, 25);
+            this.button_select.Name = "button_select";
+            this.button_select.Size = new System.Drawing.Size(145, 28);
+            this.button_select.TabIndex = 11;
+            this.button_select.Text = "SELECT";
+            this.button_select.UseVisualStyleBackColor = true;
+            this.button_select.Click += new System.EventHandler(this.button_select_Click);
             // 
-            // textBox4
+            // searchText
             // 
-            this.textBox4.Font = new System.Drawing.Font("한컴 말랑말랑 Regular", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
-            this.textBox4.Location = new System.Drawing.Point(427, 25);
-            this.textBox4.Name = "textBox4";
-            this.textBox4.Size = new System.Drawing.Size(205, 28);
-            this.textBox4.TabIndex = 12;
+            this.searchText.Font = new System.Drawing.Font("한컴 말랑말랑 Regular", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
+            this.searchText.Location = new System.Drawing.Point(427, 25);
+            this.searchText.Name = "searchText";
+            this.searchText.Size = new System.Drawing.Size(205, 28);
+            this.searchText.TabIndex = 12;
             // 
             // genderComboBox
             // 
@@ -182,15 +187,15 @@
             this.ClientSize = new System.Drawing.Size(800, 450);
             this.Controls.Add(this.label4);
             this.Controls.Add(this.genderComboBox);
-            this.Controls.Add(this.textBox4);
-            this.Controls.Add(this.button4);
+            this.Controls.Add(this.searchText);
+            this.Controls.Add(this.button_select);
             this.Controls.Add(this.firstNameTextBox);
             this.Controls.Add(this.lastNameTextBox);
             this.Controls.Add(this.label3);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.label1);
-            this.Controls.Add(this.button3);
-            this.Controls.Add(this.button2);
+            this.Controls.Add(this.button_delete);
+            this.Controls.Add(this.button_update);
             this.Controls.Add(this.button1);
             this.Controls.Add(this.dataGridView1);
             this.Name = "Form1";
@@ -206,15 +211,15 @@
 
         private System.Windows.Forms.DataGridView dataGridView1;
         private System.Windows.Forms.Button button1;
-        private System.Windows.Forms.Button button2;
-        private System.Windows.Forms.Button button3;
+        private System.Windows.Forms.Button button_update;
+        private System.Windows.Forms.Button button_delete;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.TextBox lastNameTextBox;
         private System.Windows.Forms.TextBox firstNameTextBox;
-        private System.Windows.Forms.Button button4;
-        private System.Windows.Forms.TextBox textBox4;
+        private System.Windows.Forms.Button button_select;
+        private System.Windows.Forms.TextBox searchText;
         private System.Windows.Forms.ComboBox genderComboBox;
         private System.Windows.Forms.Label label4;
     }

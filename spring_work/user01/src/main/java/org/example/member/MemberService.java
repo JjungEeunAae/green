@@ -1,8 +1,11 @@
 package org.example.member;
 
+import lombok.NoArgsConstructor;
+
 import java.time.LocalDate;
 import java.util.Collection;
 
+@NoArgsConstructor // 기본생성자 생성
 public class MemberService {
     private MemberDAO memberDAO;
 
