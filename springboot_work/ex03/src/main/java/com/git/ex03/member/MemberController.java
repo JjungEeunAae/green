@@ -1,6 +1,6 @@
 package com.git.ex03.member;
 
-import com.git.ex03.conponent.AA;
+import com.git.ex03.component.AA;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;

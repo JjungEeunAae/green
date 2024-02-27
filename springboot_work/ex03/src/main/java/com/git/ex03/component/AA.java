@@ -1,4 +1,4 @@
-package com.git.ex03.conponent;
+package com.git.ex03.component;
 
 public class AA {
     @Override
