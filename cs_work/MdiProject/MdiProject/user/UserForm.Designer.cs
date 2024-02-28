@@ -29,38 +29,38 @@
         private void InitializeComponent()
         {
             this.groupBox1 = new System.Windows.Forms.GroupBox();
-            this.label1 = new System.Windows.Forms.Label();
-            this.label2 = new System.Windows.Forms.Label();
-            this.textBox1 = new System.Windows.Forms.TextBox();
-            this.textBox2 = new System.Windows.Forms.TextBox();
-            this.textBox3 = new System.Windows.Forms.TextBox();
-            this.label3 = new System.Windows.Forms.Label();
-            this.textBox4 = new System.Windows.Forms.TextBox();
-            this.label4 = new System.Windows.Forms.Label();
-            this.button1 = new System.Windows.Forms.Button();
-            this.button2 = new System.Windows.Forms.Button();
-            this.button3 = new System.Windows.Forms.Button();
+            this.panel1 = new System.Windows.Forms.Panel();
             this.textBox5 = new System.Windows.Forms.TextBox();
+            this.button_select = new System.Windows.Forms.Button();
+            this.button_insert = new System.Windows.Forms.Button();
+            this.button_update = new System.Windows.Forms.Button();
             this.label5 = new System.Windows.Forms.Label();
-            this.button4 = new System.Windows.Forms.Button();
+            this.button_delete = new System.Windows.Forms.Button();
+            this.textBox_addr = new System.Windows.Forms.TextBox();
+            this.label4 = new System.Windows.Forms.Label();
+            this.textBox_pw = new System.Windows.Forms.TextBox();
+            this.label3 = new System.Windows.Forms.Label();
+            this.textBox_name = new System.Windows.Forms.TextBox();
+            this.textBox_email = new System.Windows.Forms.TextBox();
+            this.label2 = new System.Windows.Forms.Label();
+            this.label1 = new System.Windows.Forms.Label();
             this.groupBox2 = new System.Windows.Forms.GroupBox();
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
-            this.panel1 = new System.Windows.Forms.Panel();
             this.groupBox1.SuspendLayout();
+            this.panel1.SuspendLayout();
             this.groupBox2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
-            this.panel1.SuspendLayout();
             this.SuspendLayout();
             // 
             // groupBox1
             // 
             this.groupBox1.Controls.Add(this.panel1);
-            this.groupBox1.Controls.Add(this.textBox4);
+            this.groupBox1.Controls.Add(this.textBox_addr);
             this.groupBox1.Controls.Add(this.label4);
-            this.groupBox1.Controls.Add(this.textBox3);
+            this.groupBox1.Controls.Add(this.textBox_pw);
             this.groupBox1.Controls.Add(this.label3);
-            this.groupBox1.Controls.Add(this.textBox2);
-            this.groupBox1.Controls.Add(this.textBox1);
+            this.groupBox1.Controls.Add(this.textBox_name);
+            this.groupBox1.Controls.Add(this.textBox_email);
             this.groupBox1.Controls.Add(this.label2);
             this.groupBox1.Controls.Add(this.label1);
             this.groupBox1.Dock = System.Windows.Forms.DockStyle.Top;
@@ -73,107 +73,19 @@
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "사용자관리";
             // 
-            // label1
+            // panel1
             // 
-            this.label1.AutoSize = true;
-            this.label1.Font = new System.Drawing.Font("한컴 말랑말랑 Bold", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
-            this.label1.Location = new System.Drawing.Point(18, 37);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(70, 25);
-            this.label1.TabIndex = 0;
-            this.label1.Text = "EMAIL";
-            // 
-            // label2
-            // 
-            this.label2.AutoSize = true;
-            this.label2.Font = new System.Drawing.Font("한컴 말랑말랑 Bold", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
-            this.label2.Location = new System.Drawing.Point(23, 81);
-            this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(66, 25);
-            this.label2.TabIndex = 1;
-            this.label2.Text = "NAME";
-            // 
-            // textBox1
-            // 
-            this.textBox1.Font = new System.Drawing.Font("한컴 말랑말랑 Regular", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
-            this.textBox1.Location = new System.Drawing.Point(94, 34);
-            this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(259, 32);
-            this.textBox1.TabIndex = 2;
-            // 
-            // textBox2
-            // 
-            this.textBox2.Font = new System.Drawing.Font("한컴 말랑말랑 Regular", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
-            this.textBox2.Location = new System.Drawing.Point(94, 78);
-            this.textBox2.Name = "textBox2";
-            this.textBox2.Size = new System.Drawing.Size(259, 32);
-            this.textBox2.TabIndex = 3;
-            // 
-            // textBox3
-            // 
-            this.textBox3.Font = new System.Drawing.Font("한컴 말랑말랑 Regular", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
-            this.textBox3.Location = new System.Drawing.Point(94, 122);
-            this.textBox3.Name = "textBox3";
-            this.textBox3.Size = new System.Drawing.Size(259, 32);
-            this.textBox3.TabIndex = 5;
-            // 
-            // label3
-            // 
-            this.label3.AutoSize = true;
-            this.label3.Font = new System.Drawing.Font("한컴 말랑말랑 Bold", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
-            this.label3.Location = new System.Drawing.Point(47, 125);
-            this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(41, 25);
-            this.label3.TabIndex = 4;
-            this.label3.Text = "PW";
-            // 
-            // textBox4
-            // 
-            this.textBox4.Font = new System.Drawing.Font("한컴 말랑말랑 Regular", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
-            this.textBox4.Location = new System.Drawing.Point(94, 166);
-            this.textBox4.Name = "textBox4";
-            this.textBox4.Size = new System.Drawing.Size(259, 32);
-            this.textBox4.TabIndex = 7;
-            // 
-            // label4
-            // 
-            this.label4.AutoSize = true;
-            this.label4.Font = new System.Drawing.Font("한컴 말랑말랑 Bold", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
-            this.label4.Location = new System.Drawing.Point(25, 169);
-            this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(64, 25);
-            this.label4.TabIndex = 6;
-            this.label4.Text = "ADDR";
-            // 
-            // button1
-            // 
-            this.button1.Font = new System.Drawing.Font("한컴 말랑말랑 Regular", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
-            this.button1.Location = new System.Drawing.Point(55, 71);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(125, 63);
-            this.button1.TabIndex = 8;
-            this.button1.Text = "INSERT";
-            this.button1.UseVisualStyleBackColor = true;
-            // 
-            // button2
-            // 
-            this.button2.Font = new System.Drawing.Font("한컴 말랑말랑 Regular", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
-            this.button2.Location = new System.Drawing.Point(186, 71);
-            this.button2.Name = "button2";
-            this.button2.Size = new System.Drawing.Size(125, 63);
-            this.button2.TabIndex = 9;
-            this.button2.Text = "UPDATE";
-            this.button2.UseVisualStyleBackColor = true;
-            // 
-            // button3
-            // 
-            this.button3.Font = new System.Drawing.Font("한컴 말랑말랑 Regular", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
-            this.button3.Location = new System.Drawing.Point(317, 71);
-            this.button3.Name = "button3";
-            this.button3.Size = new System.Drawing.Size(125, 63);
-            this.button3.TabIndex = 10;
-            this.button3.Text = "DELETE";
-            this.button3.UseVisualStyleBackColor = true;
+            this.panel1.Controls.Add(this.textBox5);
+            this.panel1.Controls.Add(this.button_select);
+            this.panel1.Controls.Add(this.button_insert);
+            this.panel1.Controls.Add(this.button_update);
+            this.panel1.Controls.Add(this.label5);
+            this.panel1.Controls.Add(this.button_delete);
+            this.panel1.Dock = System.Windows.Forms.DockStyle.Right;
+            this.panel1.Location = new System.Drawing.Point(391, 34);
+            this.panel1.Name = "panel1";
+            this.panel1.Size = new System.Drawing.Size(460, 169);
+            this.panel1.TabIndex = 14;
             // 
             // textBox5
             // 
@@ -182,6 +94,39 @@
             this.textBox5.Name = "textBox5";
             this.textBox5.Size = new System.Drawing.Size(218, 32);
             this.textBox5.TabIndex = 12;
+            // 
+            // button_select
+            // 
+            this.button_select.Font = new System.Drawing.Font("한컴 말랑말랑 Regular", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
+            this.button_select.Location = new System.Drawing.Point(317, 22);
+            this.button_select.Name = "button_select";
+            this.button_select.Size = new System.Drawing.Size(125, 42);
+            this.button_select.TabIndex = 13;
+            this.button_select.Text = "SELECT";
+            this.button_select.UseVisualStyleBackColor = true;
+            this.button_select.Click += new System.EventHandler(this.button_select_Click);
+            // 
+            // button_insert
+            // 
+            this.button_insert.Font = new System.Drawing.Font("한컴 말랑말랑 Regular", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
+            this.button_insert.Location = new System.Drawing.Point(55, 71);
+            this.button_insert.Name = "button_insert";
+            this.button_insert.Size = new System.Drawing.Size(125, 63);
+            this.button_insert.TabIndex = 8;
+            this.button_insert.Text = "INSERT";
+            this.button_insert.UseVisualStyleBackColor = true;
+            this.button_insert.Click += new System.EventHandler(this.button_insert_Click);
+            // 
+            // button_update
+            // 
+            this.button_update.Font = new System.Drawing.Font("한컴 말랑말랑 Regular", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
+            this.button_update.Location = new System.Drawing.Point(186, 71);
+            this.button_update.Name = "button_update";
+            this.button_update.Size = new System.Drawing.Size(125, 63);
+            this.button_update.TabIndex = 9;
+            this.button_update.Text = "UPDATE";
+            this.button_update.UseVisualStyleBackColor = true;
+            this.button_update.Click += new System.EventHandler(this.button_update_Click);
             // 
             // label5
             // 
@@ -193,15 +138,88 @@
             this.label5.TabIndex = 11;
             this.label5.Text = "SEARCH";
             // 
-            // button4
+            // button_delete
             // 
-            this.button4.Font = new System.Drawing.Font("한컴 말랑말랑 Regular", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
-            this.button4.Location = new System.Drawing.Point(317, 22);
-            this.button4.Name = "button4";
-            this.button4.Size = new System.Drawing.Size(125, 42);
-            this.button4.TabIndex = 13;
-            this.button4.Text = "SELECT";
-            this.button4.UseVisualStyleBackColor = true;
+            this.button_delete.Font = new System.Drawing.Font("한컴 말랑말랑 Regular", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
+            this.button_delete.Location = new System.Drawing.Point(317, 71);
+            this.button_delete.Name = "button_delete";
+            this.button_delete.Size = new System.Drawing.Size(125, 63);
+            this.button_delete.TabIndex = 10;
+            this.button_delete.Text = "DELETE";
+            this.button_delete.UseVisualStyleBackColor = true;
+            this.button_delete.Click += new System.EventHandler(this.button_delete_Click);
+            // 
+            // textBox_addr
+            // 
+            this.textBox_addr.Font = new System.Drawing.Font("한컴 말랑말랑 Regular", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
+            this.textBox_addr.Location = new System.Drawing.Point(94, 166);
+            this.textBox_addr.Name = "textBox_addr";
+            this.textBox_addr.Size = new System.Drawing.Size(259, 32);
+            this.textBox_addr.TabIndex = 7;
+            // 
+            // label4
+            // 
+            this.label4.AutoSize = true;
+            this.label4.Font = new System.Drawing.Font("한컴 말랑말랑 Bold", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
+            this.label4.Location = new System.Drawing.Point(25, 169);
+            this.label4.Name = "label4";
+            this.label4.Size = new System.Drawing.Size(64, 25);
+            this.label4.TabIndex = 6;
+            this.label4.Text = "ADDR";
+            // 
+            // textBox_pw
+            // 
+            this.textBox_pw.Font = new System.Drawing.Font("한컴 말랑말랑 Regular", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
+            this.textBox_pw.Location = new System.Drawing.Point(94, 122);
+            this.textBox_pw.Name = "textBox_pw";
+            this.textBox_pw.Size = new System.Drawing.Size(259, 32);
+            this.textBox_pw.TabIndex = 5;
+            // 
+            // label3
+            // 
+            this.label3.AutoSize = true;
+            this.label3.Font = new System.Drawing.Font("한컴 말랑말랑 Bold", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
+            this.label3.Location = new System.Drawing.Point(47, 125);
+            this.label3.Name = "label3";
+            this.label3.Size = new System.Drawing.Size(41, 25);
+            this.label3.TabIndex = 4;
+            this.label3.Text = "PW";
+            // 
+            // textBox_name
+            // 
+            this.textBox_name.Font = new System.Drawing.Font("한컴 말랑말랑 Regular", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
+            this.textBox_name.Location = new System.Drawing.Point(94, 78);
+            this.textBox_name.Name = "textBox_name";
+            this.textBox_name.Size = new System.Drawing.Size(259, 32);
+            this.textBox_name.TabIndex = 3;
+            // 
+            // textBox_email
+            // 
+            this.textBox_email.Font = new System.Drawing.Font("한컴 말랑말랑 Regular", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
+            this.textBox_email.Location = new System.Drawing.Point(94, 34);
+            this.textBox_email.Name = "textBox_email";
+            this.textBox_email.Size = new System.Drawing.Size(259, 32);
+            this.textBox_email.TabIndex = 2;
+            // 
+            // label2
+            // 
+            this.label2.AutoSize = true;
+            this.label2.Font = new System.Drawing.Font("한컴 말랑말랑 Bold", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
+            this.label2.Location = new System.Drawing.Point(23, 81);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(66, 25);
+            this.label2.TabIndex = 1;
+            this.label2.Text = "NAME";
+            // 
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.Font = new System.Drawing.Font("한컴 말랑말랑 Bold", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
+            this.label1.Location = new System.Drawing.Point(18, 37);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(70, 25);
+            this.label1.TabIndex = 0;
+            this.label1.Text = "EMAIL";
             // 
             // groupBox2
             // 
@@ -218,29 +236,19 @@
             // 
             // dataGridView1
             // 
+            this.dataGridView1.AllowUserToAddRows = false;
+            this.dataGridView1.AllowUserToDeleteRows = false;
+            this.dataGridView1.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
             this.dataGridView1.BackgroundColor = System.Drawing.SystemColors.ControlLightLight;
             this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dataGridView1.Dock = System.Windows.Forms.DockStyle.Fill;
             this.dataGridView1.GridColor = System.Drawing.SystemColors.ControlDarkDark;
             this.dataGridView1.Location = new System.Drawing.Point(3, 34);
             this.dataGridView1.Name = "dataGridView1";
+            this.dataGridView1.ReadOnly = true;
             this.dataGridView1.RowTemplate.Height = 23;
             this.dataGridView1.Size = new System.Drawing.Size(848, 291);
             this.dataGridView1.TabIndex = 0;
-            // 
-            // panel1
-            // 
-            this.panel1.Controls.Add(this.textBox5);
-            this.panel1.Controls.Add(this.button4);
-            this.panel1.Controls.Add(this.button1);
-            this.panel1.Controls.Add(this.button2);
-            this.panel1.Controls.Add(this.label5);
-            this.panel1.Controls.Add(this.button3);
-            this.panel1.Dock = System.Windows.Forms.DockStyle.Right;
-            this.panel1.Location = new System.Drawing.Point(391, 34);
-            this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(460, 169);
-            this.panel1.TabIndex = 14;
             // 
             // UserForm
             // 
@@ -254,10 +262,10 @@
             this.Text = "UserForm";
             this.groupBox1.ResumeLayout(false);
             this.groupBox1.PerformLayout();
-            this.groupBox2.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();
+            this.groupBox2.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -267,18 +275,18 @@
         private System.Windows.Forms.GroupBox groupBox1;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Label label2;
-        private System.Windows.Forms.TextBox textBox2;
-        private System.Windows.Forms.TextBox textBox1;
-        private System.Windows.Forms.TextBox textBox4;
+        private System.Windows.Forms.TextBox textBox_name;
+        private System.Windows.Forms.TextBox textBox_email;
+        private System.Windows.Forms.TextBox textBox_addr;
         private System.Windows.Forms.Label label4;
-        private System.Windows.Forms.TextBox textBox3;
+        private System.Windows.Forms.TextBox textBox_pw;
         private System.Windows.Forms.Label label3;
-        private System.Windows.Forms.Button button4;
+        private System.Windows.Forms.Button button_select;
         private System.Windows.Forms.TextBox textBox5;
         private System.Windows.Forms.Label label5;
-        private System.Windows.Forms.Button button3;
-        private System.Windows.Forms.Button button2;
-        private System.Windows.Forms.Button button1;
+        private System.Windows.Forms.Button button_delete;
+        private System.Windows.Forms.Button button_update;
+        private System.Windows.Forms.Button button_insert;
         private System.Windows.Forms.GroupBox groupBox2;
         private System.Windows.Forms.DataGridView dataGridView1;
         private System.Windows.Forms.Panel panel1;
