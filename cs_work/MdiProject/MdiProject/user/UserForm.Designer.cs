@@ -65,7 +65,7 @@
             this.groupBox1.Controls.Add(this.label1);
             this.groupBox1.Dock = System.Windows.Forms.DockStyle.Top;
             this.groupBox1.FlatStyle = System.Windows.Forms.FlatStyle.System;
-            this.groupBox1.Font = new System.Drawing.Font("한컴 말랑말랑 Regular", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
+            this.groupBox1.Font = new System.Drawing.Font("국민연금체 Regular", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.groupBox1.Location = new System.Drawing.Point(0, 0);
             this.groupBox1.Name = "groupBox1";
             this.groupBox1.Size = new System.Drawing.Size(854, 206);
@@ -82,22 +82,23 @@
             this.panel1.Controls.Add(this.label5);
             this.panel1.Controls.Add(this.button_delete);
             this.panel1.Dock = System.Windows.Forms.DockStyle.Right;
-            this.panel1.Location = new System.Drawing.Point(391, 34);
+            this.panel1.Location = new System.Drawing.Point(391, 23);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(460, 169);
+            this.panel1.Size = new System.Drawing.Size(460, 180);
             this.panel1.TabIndex = 14;
             // 
             // textBox5
             // 
-            this.textBox5.Font = new System.Drawing.Font("한컴 말랑말랑 Regular", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
+            this.textBox5.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
             this.textBox5.Location = new System.Drawing.Point(93, 29);
             this.textBox5.Name = "textBox5";
-            this.textBox5.Size = new System.Drawing.Size(218, 32);
+            this.textBox5.Size = new System.Drawing.Size(218, 29);
             this.textBox5.TabIndex = 12;
             // 
             // button_select
             // 
-            this.button_select.Font = new System.Drawing.Font("한컴 말랑말랑 Regular", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
+            this.button_select.FlatAppearance.BorderSize = 0;
+            this.button_select.Font = new System.Drawing.Font("KCC-차쌤체", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
             this.button_select.Location = new System.Drawing.Point(317, 22);
             this.button_select.Name = "button_select";
             this.button_select.Size = new System.Drawing.Size(125, 42);
@@ -108,7 +109,8 @@
             // 
             // button_insert
             // 
-            this.button_insert.Font = new System.Drawing.Font("한컴 말랑말랑 Regular", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
+            this.button_insert.FlatAppearance.BorderSize = 0;
+            this.button_insert.Font = new System.Drawing.Font("KCC-차쌤체", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
             this.button_insert.Location = new System.Drawing.Point(55, 71);
             this.button_insert.Name = "button_insert";
             this.button_insert.Size = new System.Drawing.Size(125, 63);
@@ -119,7 +121,8 @@
             // 
             // button_update
             // 
-            this.button_update.Font = new System.Drawing.Font("한컴 말랑말랑 Regular", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
+            this.button_update.FlatAppearance.BorderSize = 0;
+            this.button_update.Font = new System.Drawing.Font("KCC-차쌤체", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
             this.button_update.Location = new System.Drawing.Point(186, 71);
             this.button_update.Name = "button_update";
             this.button_update.Size = new System.Drawing.Size(125, 63);
@@ -131,16 +134,17 @@
             // label5
             // 
             this.label5.AutoSize = true;
-            this.label5.Font = new System.Drawing.Font("한컴 말랑말랑 Bold", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
-            this.label5.Location = new System.Drawing.Point(5, 32);
+            this.label5.Font = new System.Drawing.Font("KCC-차쌤체", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label5.Location = new System.Drawing.Point(12, 32);
             this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(82, 25);
+            this.label5.Size = new System.Drawing.Size(78, 24);
             this.label5.TabIndex = 11;
             this.label5.Text = "SEARCH";
             // 
             // button_delete
             // 
-            this.button_delete.Font = new System.Drawing.Font("한컴 말랑말랑 Regular", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
+            this.button_delete.FlatAppearance.BorderSize = 0;
+            this.button_delete.Font = new System.Drawing.Font("KCC-차쌤체", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
             this.button_delete.Location = new System.Drawing.Point(317, 71);
             this.button_delete.Name = "button_delete";
             this.button_delete.Size = new System.Drawing.Size(125, 63);
@@ -151,73 +155,73 @@
             // 
             // textBox_addr
             // 
-            this.textBox_addr.Font = new System.Drawing.Font("한컴 말랑말랑 Regular", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
+            this.textBox_addr.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
             this.textBox_addr.Location = new System.Drawing.Point(94, 166);
             this.textBox_addr.Name = "textBox_addr";
-            this.textBox_addr.Size = new System.Drawing.Size(259, 32);
+            this.textBox_addr.Size = new System.Drawing.Size(259, 29);
             this.textBox_addr.TabIndex = 7;
             // 
             // label4
             // 
             this.label4.AutoSize = true;
-            this.label4.Font = new System.Drawing.Font("한컴 말랑말랑 Bold", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
-            this.label4.Location = new System.Drawing.Point(25, 169);
+            this.label4.Font = new System.Drawing.Font("KCC-차쌤체", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label4.Location = new System.Drawing.Point(37, 169);
             this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(64, 25);
+            this.label4.Size = new System.Drawing.Size(55, 24);
             this.label4.TabIndex = 6;
             this.label4.Text = "ADDR";
             // 
             // textBox_pw
             // 
-            this.textBox_pw.Font = new System.Drawing.Font("한컴 말랑말랑 Regular", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
+            this.textBox_pw.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
             this.textBox_pw.Location = new System.Drawing.Point(94, 122);
             this.textBox_pw.Name = "textBox_pw";
-            this.textBox_pw.Size = new System.Drawing.Size(259, 32);
+            this.textBox_pw.Size = new System.Drawing.Size(259, 29);
             this.textBox_pw.TabIndex = 5;
             // 
             // label3
             // 
             this.label3.AutoSize = true;
-            this.label3.Font = new System.Drawing.Font("한컴 말랑말랑 Bold", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
-            this.label3.Location = new System.Drawing.Point(47, 125);
+            this.label3.Font = new System.Drawing.Font("KCC-차쌤체", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label3.Location = new System.Drawing.Point(54, 125);
             this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(41, 25);
+            this.label3.Size = new System.Drawing.Size(36, 24);
             this.label3.TabIndex = 4;
             this.label3.Text = "PW";
             // 
             // textBox_name
             // 
-            this.textBox_name.Font = new System.Drawing.Font("한컴 말랑말랑 Regular", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
+            this.textBox_name.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
             this.textBox_name.Location = new System.Drawing.Point(94, 78);
             this.textBox_name.Name = "textBox_name";
-            this.textBox_name.Size = new System.Drawing.Size(259, 32);
+            this.textBox_name.Size = new System.Drawing.Size(259, 29);
             this.textBox_name.TabIndex = 3;
             // 
             // textBox_email
             // 
-            this.textBox_email.Font = new System.Drawing.Font("한컴 말랑말랑 Regular", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
+            this.textBox_email.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
             this.textBox_email.Location = new System.Drawing.Point(94, 34);
             this.textBox_email.Name = "textBox_email";
-            this.textBox_email.Size = new System.Drawing.Size(259, 32);
+            this.textBox_email.Size = new System.Drawing.Size(259, 29);
             this.textBox_email.TabIndex = 2;
             // 
             // label2
             // 
             this.label2.AutoSize = true;
-            this.label2.Font = new System.Drawing.Font("한컴 말랑말랑 Bold", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
-            this.label2.Location = new System.Drawing.Point(23, 81);
+            this.label2.Font = new System.Drawing.Font("KCC-차쌤체", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label2.Location = new System.Drawing.Point(30, 81);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(66, 25);
+            this.label2.Size = new System.Drawing.Size(61, 24);
             this.label2.TabIndex = 1;
             this.label2.Text = "NAME";
             // 
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.Font = new System.Drawing.Font("한컴 말랑말랑 Bold", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
-            this.label1.Location = new System.Drawing.Point(18, 37);
+            this.label1.Font = new System.Drawing.Font("KCC-차쌤체", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label1.Location = new System.Drawing.Point(25, 37);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(70, 25);
+            this.label1.Size = new System.Drawing.Size(67, 24);
             this.label1.TabIndex = 0;
             this.label1.Text = "EMAIL";
             // 
@@ -226,7 +230,7 @@
             this.groupBox2.Controls.Add(this.dataGridView1);
             this.groupBox2.Dock = System.Windows.Forms.DockStyle.Fill;
             this.groupBox2.FlatStyle = System.Windows.Forms.FlatStyle.System;
-            this.groupBox2.Font = new System.Drawing.Font("한컴 말랑말랑 Regular", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
+            this.groupBox2.Font = new System.Drawing.Font("국민연금체 Regular", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.groupBox2.Location = new System.Drawing.Point(0, 206);
             this.groupBox2.Name = "groupBox2";
             this.groupBox2.Size = new System.Drawing.Size(854, 328);
@@ -243,11 +247,11 @@
             this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dataGridView1.Dock = System.Windows.Forms.DockStyle.Fill;
             this.dataGridView1.GridColor = System.Drawing.SystemColors.ControlDarkDark;
-            this.dataGridView1.Location = new System.Drawing.Point(3, 34);
+            this.dataGridView1.Location = new System.Drawing.Point(3, 23);
             this.dataGridView1.Name = "dataGridView1";
             this.dataGridView1.ReadOnly = true;
             this.dataGridView1.RowTemplate.Height = 23;
-            this.dataGridView1.Size = new System.Drawing.Size(848, 291);
+            this.dataGridView1.Size = new System.Drawing.Size(848, 302);
             this.dataGridView1.TabIndex = 0;
             // 
             // UserForm
