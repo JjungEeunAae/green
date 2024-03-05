@@ -12,5 +12,7 @@ namespace MdiProject.todo
         public string title { get; set; }
         public string content { get; set; }
         public DateTime finishdate { get; set; }
+
+
     }
 }
