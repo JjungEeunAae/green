@@ -63,14 +63,10 @@
             // 
             // label1
             // 
-            this.label1.AutoSize = true;
-            this.label1.BackColor = System.Drawing.Color.Transparent;
-            this.label1.Font = new System.Drawing.Font("국민연금체 Regular", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
-            this.label1.Location = new System.Drawing.Point(8, 6);
+            this.label1.Location = new System.Drawing.Point(0, 0);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(61, 35);
+            this.label1.Size = new System.Drawing.Size(100, 23);
             this.label1.TabIndex = 0;
-            this.label1.Text = "예약";
             // 
             // panel2
             // 
@@ -180,6 +176,7 @@
             // 
             // comboBox_userIdx
             // 
+            this.comboBox_userIdx.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.comboBox_userIdx.Font = new System.Drawing.Font("KCC-차쌤체", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
             this.comboBox_userIdx.FormattingEnabled = true;
             this.comboBox_userIdx.Location = new System.Drawing.Point(79, 64);
@@ -216,7 +213,6 @@
             this.Name = "TodoForm";
             this.Text = "TodoForm";
             this.panel1.ResumeLayout(false);
-            this.panel1.PerformLayout();
             this.panel2.ResumeLayout(false);
             this.panel2.PerformLayout();
             this.panel3.ResumeLayout(false);

@@ -23,7 +23,7 @@ namespace MdiProject.user
                 string sql = "INSERT INTO users " +
                                 "(idx, email, addr, password, name) " +
                             "VALUES " +
-                                "(uidx_sqe.NEXTVAL, :email, :addr, :password, :name)";
+                                "(usersidx.NEXTVAL, :email, :addr, :password, :name)";
                 OracleCommand cmd = new OracleCommand(sql,con);
                 cmd.Parameters.Clear();
                 cmd.Parameters.Add(":email", user.Email);
@@ -77,6 +77,41 @@ namespace MdiProject.user
                 return ds.Tables[0];
             } 
             catch(Exception e)
+            {
+                Console.WriteLine(e.StackTrace);
+                Console.WriteLine(e.Message);
+                return null;
+            }
+            finally
+            {
+                DBINFO.closeConnect();
+            }
+        }
+
+        public List<String> selectUserId()
+        {
+            try
+            {
+                OracleConnection conn = DBINFO.openConnect();
+
+                string sql = "SELECT idx FROM users";
+
+                OracleDataAdapter adapter = new OracleDataAdapter();
+                DataSet ds = new DataSet();
+
+                OracleCommand cmd = new OracleCommand(sql, conn);
+                adapter.SelectCommand = cmd;
+
+                adapter.Fill(ds);
+
+                List<string> list = new List<string>();
+                foreach(DataRow dr in ds.Tables[0].Rows)
+                {
+                    list.Add(dr["idx"].ToString());
+                }
+                return list;
+            }
+            catch (Exception e)
             {
                 Console.WriteLine(e.StackTrace);
                 Console.WriteLine(e.Message);

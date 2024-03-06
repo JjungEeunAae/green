@@ -1,4 +1,5 @@
-﻿using System;
+﻿using MdiProject.user;
+using System;
 using System.Collections.Generic;
 using System.Data;
 using System.Drawing;
@@ -10,6 +11,7 @@ namespace MdiProject.todo
     {
         private static TodoForm instance = null;
         private TodoDBManager dbManager = new TodoDBManager();
+        private UserDBManager userDBManager = new UserDBManager();
 
         // 메인 폼에 userForm이 존재하면 더 이상 userForm이 생기지 않도록.
         public static TodoForm getInstance()
@@ -28,39 +30,9 @@ namespace MdiProject.todo
         public TodoForm()
         {
             InitializeComponent();
+
             comboboxInit();
-
-            // 만들어진 패널에 DB 값 넣기
-            DataTable dataTable = dbManager.select();
-            int y = 80;
-            int evenOdd = 1;
-            foreach (DataRow row in dataTable.Rows)
-            {
-                Console.WriteLine("row[idx] = " + row["idx"]);
-                Console.WriteLine("row[title] = " + row["title"]);
-                Console.WriteLine("row[content] = " + row["content"]);
-                Console.WriteLine("row[date] = " + row["finishdate"]);
-
-                int user_idx = int.Parse(row["idx"].ToString());
-                string title = row["title"].ToString();
-                string content = row["content"].ToString();
-                DateTime finishdate = new DateTime(
-                                            int.Parse(row["finishdate"].ToString().Split('-',' ')[0]),
-                                            int.Parse(row["finishdate"].ToString().Split('-',' ')[1]),
-                                            int.Parse(row["finishdate"].ToString().Split('-', ' ')[2])
-                                        );
-                //Console.WriteLine(finishdate.ToString("yyyy/MM/dd"));
-                Todo todo = new Todo();
-                todo.user_idx = user_idx;
-                todo.title = title;
-                todo.content = content;
-                todo.finishdate = finishdate;
-
-                // y는 220씩 증가해야함
-                makeTodoPanel(20, y, todo, evenOdd%2);
-                evenOdd += 1;
-                y += 220;
-            }
+            todoSelect();
 
             #region 주석처리한 내용
             // '예약' panel 설정
@@ -77,6 +49,41 @@ namespace MdiProject.todo
             resuvPanel.Controls.Add(title_id);
             panel1.Controls.Add(resuvPanel);*/
             #endregion
+        }
+
+        public void todoSelect()
+        {
+            // 만들어진 패널에 DB 값 넣기
+            DataTable dataTable = dbManager.select();
+            int y = 80;
+            int evenOdd = 1;
+            foreach (DataRow row in dataTable.Rows)
+            {
+                Console.WriteLine("row[idx] = " + row["idx"]);
+                Console.WriteLine("row[title] = " + row["title"]);
+                Console.WriteLine("row[content] = " + row["content"]);
+                Console.WriteLine("row[date] = " + row["finishdate"]);
+
+                int user_idx = int.Parse(row["idx"].ToString());
+                string title = row["title"].ToString();
+                string content = row["content"].ToString();
+                DateTime finishdate = new DateTime(
+                                            int.Parse(row["finishdate"].ToString().Split('-', ' ')[0]),
+                                            int.Parse(row["finishdate"].ToString().Split('-', ' ')[1]),
+                                            int.Parse(row["finishdate"].ToString().Split('-', ' ')[2])
+                                        );
+                //Console.WriteLine(finishdate.ToString("yyyy/MM/dd"));
+                Todo todo = new Todo();
+                todo.user_idx = user_idx;
+                todo.title = title;
+                todo.content = content;
+                todo.finishdate = finishdate;
+
+                // y는 220씩 증가해야함
+                makeTodoPanel(20, y, todo, evenOdd % 2);
+                evenOdd += 1;
+                y += 220;
+            }
         }
 
         private void insertBtn_Click(object sender, EventArgs e)
@@ -96,6 +103,10 @@ namespace MdiProject.todo
                 textBox_title.Text = "";
                 textBox_content.Text = "";
                 comboBox_userIdx.SelectedItem = "1";
+
+                // 패널 초기화
+                panel1.Controls.Clear();
+                todoSelect();
             } else
             {
                 MessageBox.Show("에러가 발생하였습니다.");
@@ -232,16 +243,35 @@ namespace MdiProject.todo
 
             this.panel1.Controls.Add(panel4);
 
+            // 목록보는 기능의 메소드에서 panel4의 모든 도구들을 클린해서
+            // '예약'이라는 제목을 가진 label1을 동적으로 붙혀넣어주었음.
+            // 
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.BackColor = Color.Transparent;
+            this.label1.Font = new Font("국민연금체 Regular", 18F, FontStyle.Bold, GraphicsUnit.Point, ((byte)(129)));
+            this.label1.Location = new Point(8, 6);
+            this.label1.Name = "label1";
+            this.label1.Size = new Size(61, 35);
+            this.label1.TabIndex = 0;
+            this.label1.Text = "예약";
+
+            this.panel1.Controls.Add(this.label1);
+
             #endregion
         }
 
         private void comboboxInit()
         {
-            comboBox_userIdx.DataSource = new List<string>()
+            List<String> list = userDBManager.selectUserId();
+            comboBox_userIdx.DataSource = list;
+            comboBox_userIdx.SelectedItem = "1";
+
+            /*comboBox_userIdx.DataSource = new List<string>()
             {
                 "1", "2", "3", "4", "5"
-            };
-            comboBox_userIdx.SelectedItem = "1";
+            };*/
         }
     }
 }

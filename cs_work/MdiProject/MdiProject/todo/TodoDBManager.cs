@@ -20,7 +20,7 @@ namespace MdiProject.todo
             {
                 OracleConnection conn = DBINFO.openConnect();
 
-                string sql = "SELECT * FROM todo";
+                string sql = "SELECT * FROM todo ORDER BY 5 DESC";
 
                 OracleDataAdapter adapter = new OracleDataAdapter();
                 DataSet ds = new DataSet();
@@ -74,5 +74,6 @@ namespace MdiProject.todo
                 DBINFO.closeConnect();
             }
         }
+
     }
 }
