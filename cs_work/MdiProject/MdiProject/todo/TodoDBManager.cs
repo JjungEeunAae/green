@@ -20,7 +20,16 @@ namespace MdiProject.todo
             {
                 OracleConnection conn = DBINFO.openConnect();
 
-                string sql = "SELECT * FROM todo ORDER BY 5 DESC";
+                string sql = "SELECT a.idx" +
+                             "     , a.title" +
+                             "     , a.finishdate" +
+                             "     , b.name" +
+                             "     , a.content" +
+                             "  FROM todo a" +
+                             "  LEFT OUTER JOIN users b" +
+                             "    ON a.users_idx = b.idx" +
+                             " WHERE a.status IS NULL" +
+                             " ORDER BY 1 DESC";
 
                 OracleDataAdapter adapter = new OracleDataAdapter();
                 DataSet ds = new DataSet();

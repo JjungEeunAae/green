@@ -57,12 +57,14 @@ namespace MdiProject.todo
             DataTable dataTable = dbManager.select();
             int y = 80;
             int evenOdd = 1;
+
             foreach (DataRow row in dataTable.Rows)
             {
-                Console.WriteLine("row[idx] = " + row["idx"]);
+               /*Console.WriteLine("row[idx] = " + row["idx"]);
                 Console.WriteLine("row[title] = " + row["title"]);
                 Console.WriteLine("row[content] = " + row["content"]);
                 Console.WriteLine("row[date] = " + row["finishdate"]);
+                Console.WriteLine("row[name] = " + row["name"]);*/
 
                 int user_idx = int.Parse(row["idx"].ToString());
                 string title = row["title"].ToString();
@@ -72,12 +74,13 @@ namespace MdiProject.todo
                                             int.Parse(row["finishdate"].ToString().Split('-', ' ')[1]),
                                             int.Parse(row["finishdate"].ToString().Split('-', ' ')[2])
                                         );
-                //Console.WriteLine(finishdate.ToString("yyyy/MM/dd"));
+
                 Todo todo = new Todo();
                 todo.user_idx = user_idx;
                 todo.title = title;
                 todo.content = content;
                 todo.finishdate = finishdate;
+                todo.name = row["name"].ToString();
 
                 // y는 220씩 증가해야함
                 makeTodoPanel(20, y, todo, evenOdd % 2);
@@ -173,6 +176,7 @@ namespace MdiProject.todo
             success_checkbox.TabIndex = 4;
             success_checkbox.Text = "완료";
             success_checkbox.UseVisualStyleBackColor = true;
+            success_checkbox.Click += Compete_checkBox_Click; // 체크박스 이벤트 생성
             // 
             // finishDate_lb
             // 
@@ -212,6 +216,14 @@ namespace MdiProject.todo
             title_lb.TabIndex = 0;
             title_lb.Text = "title";
             // 
+            // nameLabel
+            //
+            Label nameLabel = new Label();
+            nameLabel.Text = "할 사람 : " + todo.name.ToString();
+            nameLabel.AutoSize = true;
+            nameLabel.Location = new Point(160, 70);
+            nameLabel.Font = new Font("함초롱돋움", 10F);
+            // 
             // panel4
             //
             Panel panel4 = new Panel();
@@ -227,6 +239,8 @@ namespace MdiProject.todo
             {
                 panel4.BackColor = Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(224)))), ((int)(((byte)(192)))));
             }
+
+            panel4.Controls.Add(nameLabel);
             panel4.Controls.Add(finishDate_lb_value);
             panel4.Controls.Add(content_lb_value);
             panel4.Controls.Add(title_lb_value);
@@ -234,6 +248,7 @@ namespace MdiProject.todo
             panel4.Controls.Add(finishDate_lb);
             panel4.Controls.Add(content_lb);
             panel4.Controls.Add(title_lb);
+
             panel4.Location = new Point(panelx, panely);
             panel4.Name = "panel4";
             panel4.Size = new Size(280, 195);
@@ -260,6 +275,11 @@ namespace MdiProject.todo
             this.panel1.Controls.Add(this.label1);
 
             #endregion
+        }
+
+        private void Compete_checkBox_Click(object sender, EventArgs e)
+        {
+            MessageBox.Show("sㅜ널렀ㅇ!!");
         }
 
         private void comboboxInit()
