@@ -668,4 +668,7 @@
         79QnhsWbbckdo/gICMCCxM4zNrLoxFf4PEtJdFy5aOI5zc2jiLUu2NNRWDLte4rFRG7nQJ//2Q==
 </value>
   </data>
+  <metadata name="compl_panel.GenerateMember" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
+    <value>False</value>
+  </metadata>
 </root>

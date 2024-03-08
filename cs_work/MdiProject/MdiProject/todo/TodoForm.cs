@@ -53,6 +53,8 @@ namespace MdiProject.todo
 
         public void todoSelect()
         {
+            // 패널 초기화
+            panel1.Controls.Clear();
             // 만들어진 패널에 DB 값 넣기
             DataTable dataTable = dbManager.select();
             int y = 80;
@@ -107,8 +109,6 @@ namespace MdiProject.todo
                 textBox_content.Text = "";
                 comboBox_userIdx.SelectedItem = "1";
 
-                // 패널 초기화
-                panel1.Controls.Clear();
                 todoSelect();
             } else
             {
@@ -176,6 +176,7 @@ namespace MdiProject.todo
             success_checkbox.TabIndex = 4;
             success_checkbox.Text = "완료";
             success_checkbox.UseVisualStyleBackColor = true;
+            success_checkbox.Tag = todo.user_idx;
             success_checkbox.Click += Compete_checkBox_Click; // 체크박스 이벤트 생성
             // 
             // finishDate_lb
@@ -279,8 +280,60 @@ namespace MdiProject.todo
 
         private void Compete_checkBox_Click(object sender, EventArgs e)
         {
-            MessageBox.Show("sㅜ널렀ㅇ!!");
+            CheckBox cb = sender as CheckBox;
+            MessageBox.Show(cb.Tag.ToString());
+            bool result = dbManager.update(cb.Tag.ToString());
+
+            if (result)
+            {
+                MessageBox.Show("수정 성공");
+                todoSelect();
+            } else
+            {
+                MessageBox.Show("수정 실패");
+            }
         }
+
+        public void todoSelectComplete()
+        {
+            // 패널 초기화
+            compl_panel.Controls.Clear();
+            // 만들어진 패널에 DB 값 넣기
+            DataTable dataTable = dbManager.select();
+            int y = 80;
+            int evenOdd = 1;
+
+            foreach (DataRow row in dataTable.Rows)
+            {
+                /*Console.WriteLine("row[idx] = " + row["idx"]);
+                 Console.WriteLine("row[title] = " + row["title"]);
+                 Console.WriteLine("row[content] = " + row["content"]);
+                 Console.WriteLine("row[date] = " + row["finishdate"]);
+                 Console.WriteLine("row[name] = " + row["name"]);*/
+
+                int user_idx = int.Parse(row["idx"].ToString());
+                string title = row["title"].ToString();
+                string content = row["content"].ToString();
+                DateTime finishdate = new DateTime(
+                                            int.Parse(row["finishdate"].ToString().Split('-', ' ')[0]),
+                                            int.Parse(row["finishdate"].ToString().Split('-', ' ')[1]),
+                                            int.Parse(row["finishdate"].ToString().Split('-', ' ')[2])
+                                        );
+
+                Todo todo = new Todo();
+                todo.user_idx = user_idx;
+                todo.title = title;
+                todo.content = content;
+                todo.finishdate = finishdate;
+                todo.name = row["name"].ToString();
+
+                // y는 220씩 증가해야함
+                makeTodoPanel(20, y, todo, evenOdd % 2);
+                evenOdd += 1;
+                y += 220;
+            }
+        }
+
 
         private void comboboxInit()
         {

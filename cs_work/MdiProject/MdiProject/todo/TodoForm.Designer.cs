@@ -31,7 +31,6 @@
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(TodoForm));
             this.panel1 = new System.Windows.Forms.Panel();
             this.label1 = new System.Windows.Forms.Label();
-            this.panel2 = new System.Windows.Forms.Panel();
             this.label2 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
             this.panel3 = new System.Windows.Forms.Panel();
@@ -44,8 +43,9 @@
             this.comboBox_userIdx = new System.Windows.Forms.ComboBox();
             this.label4 = new System.Windows.Forms.Label();
             this.textBox_title = new System.Windows.Forms.TextBox();
+            this.compl_panel = new System.Windows.Forms.Panel();
             this.panel1.SuspendLayout();
-            this.panel2.SuspendLayout();
+            this.compl_panel.SuspendLayout();
             this.panel3.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -68,14 +68,14 @@
             this.label1.Size = new System.Drawing.Size(100, 23);
             this.label1.TabIndex = 0;
             // 
-            // panel2
+            // compl_panel
             // 
-            this.panel2.Controls.Add(this.label2);
-            this.panel2.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.panel2.Location = new System.Drawing.Point(350, 0);
-            this.panel2.Name = "panel2";
-            this.panel2.Size = new System.Drawing.Size(787, 564);
-            this.panel2.TabIndex = 1;
+            compl_panel.Controls.Add(this.label2);
+            compl_panel.Dock = System.Windows.Forms.DockStyle.Fill;
+            compl_panel.Location = new System.Drawing.Point(350, 0);
+            compl_panel.Name = "compl_panel";
+            compl_panel.Size = new System.Drawing.Size(787, 564);
+            compl_panel.TabIndex = 1;
             // 
             // label2
             // 
@@ -208,13 +208,13 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1137, 564);
             this.Controls.Add(this.panel3);
-            this.Controls.Add(this.panel2);
+            this.Controls.Add(compl_panel);
             this.Controls.Add(this.panel1);
             this.Name = "TodoForm";
             this.Text = "TodoForm";
             this.panel1.ResumeLayout(false);
-            this.panel2.ResumeLayout(false);
-            this.panel2.PerformLayout();
+            this.compl_panel.ResumeLayout(false);
+            this.compl_panel.PerformLayout();
             this.panel3.ResumeLayout(false);
             this.panel3.PerformLayout();
             this.ResumeLayout(false);
@@ -223,7 +223,7 @@
         #endregion
 
         private System.Windows.Forms.Panel panel1;
-        private System.Windows.Forms.Panel panel2;
+        private System.Windows.Forms.Panel compl_panel;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Label label3;

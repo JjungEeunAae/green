@@ -1,4 +1,4 @@
-package com.ea.restapi03.users;
+package com.ea.restapi03.exception;
 
 import com.ea.restapi03.exception.ErrorResponse;
 import com.ea.restapi03.exception.LogExcetion;
@@ -12,7 +12,7 @@ import javax.security.auth.login.LoginException;
 import java.time.LocalDateTime;
 
 @ControllerAdvice
-public class UserExceptionHandler extends ResponseEntityExceptionHandler {
+public class GlobalExceptionHandler extends ResponseEntityExceptionHandler {
     @ExceptionHandler(LogExcetion.class)
     public final ResponseEntity<ErrorResponse> handlerLogException(LogExcetion ex) {
         //System.out.println(ex.toString());
@@ -22,5 +22,16 @@ public class UserExceptionHandler extends ResponseEntityExceptionHandler {
                                                     .errorDateTime(LocalDateTime.now())
                                                     .build();
         return ResponseEntity.status(HttpStatus.BAD_REQUEST).body(errorResponse);
+    }
+
+    @ExceptionHandler(Exception.class)
+    public final ResponseEntity<ErrorResponse> handlerLogException(UserException e) {
+        ErrorResponse errorResponse = ErrorResponse.builder()
+                                                    .errorCode(e.getErrorCode().getErrorCode())
+                                                    .errorMessage(e.getErrorCode().getMessage())
+                                                    .errorDateTime(LocalDateTime.now())
+                                                    .build();
+
+        return ResponseEntity.status(HttpStatus.NOT_FOUND).body(errorResponse);
     }
 }
