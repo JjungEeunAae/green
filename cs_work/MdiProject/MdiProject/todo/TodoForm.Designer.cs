@@ -29,6 +29,7 @@
         private void InitializeComponent()
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(TodoForm));
+            System.Windows.Forms.Panel compl_panel;
             this.panel1 = new System.Windows.Forms.Panel();
             this.label1 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
@@ -45,8 +46,8 @@
             this.textBox_title = new System.Windows.Forms.TextBox();
             this.compl_panel = new System.Windows.Forms.Panel();
             this.panel1.SuspendLayout();
-            this.compl_panel.SuspendLayout();
             this.panel3.SuspendLayout();
+            this.compl_panel.SuspendLayout();
             this.SuspendLayout();
             // 
             // panel1
@@ -67,15 +68,6 @@
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(100, 23);
             this.label1.TabIndex = 0;
-            // 
-            // compl_panel
-            // 
-            compl_panel.Controls.Add(this.label2);
-            compl_panel.Dock = System.Windows.Forms.DockStyle.Fill;
-            compl_panel.Location = new System.Drawing.Point(350, 0);
-            compl_panel.Name = "compl_panel";
-            compl_panel.Size = new System.Drawing.Size(787, 564);
-            compl_panel.TabIndex = 1;
             // 
             // label2
             // 
@@ -202,21 +194,31 @@
             this.textBox_title.Size = new System.Drawing.Size(225, 27);
             this.textBox_title.TabIndex = 3;
             // 
+            // compl_panel
+            // 
+            this.compl_panel.AutoScroll = true;
+            this.compl_panel.Controls.Add(this.label2);
+            this.compl_panel.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.compl_panel.Location = new System.Drawing.Point(350, 0);
+            this.compl_panel.Name = "compl_panel";
+            this.compl_panel.Size = new System.Drawing.Size(787, 564);
+            this.compl_panel.TabIndex = 1;
+            // 
             // TodoForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 12F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1137, 564);
             this.Controls.Add(this.panel3);
-            this.Controls.Add(compl_panel);
+            this.Controls.Add(this.compl_panel);
             this.Controls.Add(this.panel1);
             this.Name = "TodoForm";
             this.Text = "TodoForm";
             this.panel1.ResumeLayout(false);
-            this.compl_panel.ResumeLayout(false);
-            this.compl_panel.PerformLayout();
             this.panel3.ResumeLayout(false);
             this.panel3.PerformLayout();
+            this.compl_panel.ResumeLayout(false);
+            this.compl_panel.PerformLayout();
             this.ResumeLayout(false);
 
         }

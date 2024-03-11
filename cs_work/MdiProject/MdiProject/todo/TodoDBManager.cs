@@ -14,13 +14,28 @@ namespace MdiProject.todo
     {
         public TodoDBManager() { }
 
-        public DataTable select()
+        public DataTable select(string status)
         {
             try
             {
                 OracleConnection conn = DBINFO.openConnect();
+                string sql = "";
 
-                string sql = "SELECT a.idx" +
+                if (status.Equals("Y"))
+                {
+                    sql = "SELECT a.idx" +
+                             "     , a.title" +
+                             "     , a.finishdate" +
+                             "     , b.name" +
+                             "     , a.content" +
+                             "  FROM todo a" +
+                             "  LEFT OUTER JOIN users b" +
+                             "    ON a.users_idx = b.idx" +
+                             " WHERE a.status = 'Y'" +
+                             " ORDER BY 1 DESC";
+                } else
+                {
+                    sql = "SELECT a.idx" +
                              "     , a.title" +
                              "     , a.finishdate" +
                              "     , b.name" +
@@ -30,6 +45,7 @@ namespace MdiProject.todo
                              "    ON a.users_idx = b.idx" +
                              " WHERE a.status IS NULL" +
                              " ORDER BY 1 DESC";
+                }
 
                 OracleDataAdapter adapter = new OracleDataAdapter();
                 DataSet ds = new DataSet();

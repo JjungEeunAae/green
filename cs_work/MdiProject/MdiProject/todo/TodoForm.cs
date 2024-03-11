@@ -33,6 +33,7 @@ namespace MdiProject.todo
 
             comboboxInit();
             todoSelect();
+            todoSelectComplete();
 
             #region 주석처리한 내용
             // '예약' panel 설정
@@ -56,7 +57,7 @@ namespace MdiProject.todo
             // 패널 초기화
             panel1.Controls.Clear();
             // 만들어진 패널에 DB 값 넣기
-            DataTable dataTable = dbManager.select();
+            DataTable dataTable = dbManager.select("");
             int y = 80;
             int evenOdd = 1;
 
@@ -116,7 +117,7 @@ namespace MdiProject.todo
             }
         }
 
-        private void makeTodoPanel(int panelx, int panely, Todo todo, int evenOdd)
+        private void makeTodoPanel(int panelx, int panely, Todo todo, int evenOdd, string panel = "panel1")
         {
             #region panel 화면구현
             Label title_lb = new Label();
@@ -257,23 +258,29 @@ namespace MdiProject.todo
             panel4.ResumeLayout(false);
             panel4.PerformLayout();
 
-            this.panel1.Controls.Add(panel4);
-
-            // 목록보는 기능의 메소드에서 panel4의 모든 도구들을 클린해서
-            // '예약'이라는 제목을 가진 label1을 동적으로 붙혀넣어주었음.
-            // 
-            // label1
-            // 
-            this.label1.AutoSize = true;
-            this.label1.BackColor = Color.Transparent;
-            this.label1.Font = new Font("국민연금체 Regular", 18F, FontStyle.Bold, GraphicsUnit.Point, ((byte)(129)));
-            this.label1.Location = new Point(8, 6);
-            this.label1.Name = "label1";
-            this.label1.Size = new Size(61, 35);
-            this.label1.TabIndex = 0;
-            this.label1.Text = "예약";
-
-            this.panel1.Controls.Add(this.label1);
+            if(panel.Equals("panel1"))
+            {
+                // 목록보는 기능의 메소드에서 panel4의 모든 도구들을 클린해서
+                // '예약'이라는 제목을 가진 label1을 동적으로 붙혀넣어주었음.
+                // 
+                // label1
+                // 
+                this.label1.AutoSize = true;
+                this.label1.BackColor = Color.Transparent;
+                this.label1.Font = new Font("국민연금체 Regular", 18F, FontStyle.Bold, GraphicsUnit.Point, ((byte)(129)));
+                this.label1.Location = new Point(8, 6);
+                this.label1.Name = "label1";
+                this.label1.Size = new Size(61, 35);
+                this.label1.TabIndex = 0;
+                this.label1.Text = "예약";
+                this.panel1.Controls.Add(panel4);
+                this.panel1.Controls.Add(this.label1);
+            }
+            else
+            {
+                this.compl_panel.Controls.Add(panel4);
+                this.compl_panel.Controls.Add(this.label2);
+            }
 
             #endregion
         }
@@ -281,13 +288,14 @@ namespace MdiProject.todo
         private void Compete_checkBox_Click(object sender, EventArgs e)
         {
             CheckBox cb = sender as CheckBox;
-            MessageBox.Show(cb.Tag.ToString());
+            //MessageBox.Show(cb.Tag.ToString());
             bool result = dbManager.update(cb.Tag.ToString());
 
             if (result)
             {
                 MessageBox.Show("수정 성공");
                 todoSelect();
+                todoSelectComplete();
             } else
             {
                 MessageBox.Show("수정 실패");
@@ -299,18 +307,12 @@ namespace MdiProject.todo
             // 패널 초기화
             compl_panel.Controls.Clear();
             // 만들어진 패널에 DB 값 넣기
-            DataTable dataTable = dbManager.select();
+            DataTable dataTable = dbManager.select("Y");
             int y = 80;
             int evenOdd = 1;
 
             foreach (DataRow row in dataTable.Rows)
             {
-                /*Console.WriteLine("row[idx] = " + row["idx"]);
-                 Console.WriteLine("row[title] = " + row["title"]);
-                 Console.WriteLine("row[content] = " + row["content"]);
-                 Console.WriteLine("row[date] = " + row["finishdate"]);
-                 Console.WriteLine("row[name] = " + row["name"]);*/
-
                 int user_idx = int.Parse(row["idx"].ToString());
                 string title = row["title"].ToString();
                 string content = row["content"].ToString();
@@ -328,12 +330,11 @@ namespace MdiProject.todo
                 todo.name = row["name"].ToString();
 
                 // y는 220씩 증가해야함
-                makeTodoPanel(20, y, todo, evenOdd % 2);
+                makeTodoPanel(20, y, todo, evenOdd % 2, "centerPanel");
                 evenOdd += 1;
                 y += 220;
             }
         }
-
 
         private void comboboxInit()
         {

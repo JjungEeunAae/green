@@ -2,6 +2,12 @@ package com.ea.restapi03.users;
 
 import com.ea.restapi03.exception.ErrorCode;
 import com.ea.restapi03.exception.UserException;
+import io.swagger.v3.oas.annotations.Operation;
+import io.swagger.v3.oas.annotations.Parameter;
+import io.swagger.v3.oas.annotations.Parameters;
+import io.swagger.v3.oas.annotations.responses.ApiResponse;
+import io.swagger.v3.oas.annotations.responses.ApiResponses;
+import io.swagger.v3.oas.annotations.tags.Tag;
 import jakarta.validation.Valid;
 import lombok.Getter;
 import lombok.RequiredArgsConstructor;
@@ -16,9 +22,17 @@ import java.util.List;
 
 @RestController
 @RequiredArgsConstructor
+@Tag(name = "User-Controller", description = "유저 조회 등록 수정 삭제")
 public class UserController {
     private final UserService service;
 
+    @Operation(summary = "사용자 전체 목록보기", description = "사용자 전체 정보를 조회할 수 있습니다.")
+    @ApiResponses(
+            {
+                @ApiResponse(responseCode = "200", description = "OK"),
+                @ApiResponse(responseCode = "404", description = "사용자들이 없을 때 나오는 코드")
+            }
+    )
     @GetMapping("users")
     public ResponseEntity<List<User>> getAllUsers() {
 
@@ -33,6 +47,12 @@ public class UserController {
         return ResponseEntity.ok(list);
     }
 
+    @Parameters(
+            @Parameter(description = "조회하고자 하는 사용자 ID를 입력",
+                    name = "id",
+                    required = true
+            )
+    )
     @GetMapping("users/{id}")
     public ResponseEntity<User> getUserById(@PathVariable Long id) {
         System.out.println("id >>>> " + id);
