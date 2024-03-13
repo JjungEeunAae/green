@@ -1,7 +1,4 @@
-# green_240104
+![image](https://github.com/JjungEeunAae/green/assets/121069641/619eade6-b734-49ca-9166-2b3fffa55b5a)
 
-## 안녕하세요 연습용입니다.
+### 기업 요구를 반영한 프로젝트 중심 JAVA 백엔드 테스트 주도 개발자 양성 과정
 
-## git push 테스트 입니다.
-
-<p>내용수정할게요</p>
