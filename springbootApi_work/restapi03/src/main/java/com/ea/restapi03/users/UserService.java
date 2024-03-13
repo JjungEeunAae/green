@@ -59,4 +59,25 @@ public class UserService {
 
         return dbUser;
     }
+
+    public void delete(Long id) {
+        Optional<User> dbUser = userRepository.findById(id);
+
+        // 삭제할 아이디가 없으면 오류 메세지 전달
+        if(dbUser.isEmpty()) {
+            throw new UserException(ErrorCode.NOTFOUND);
+        }
+
+        // 둘 중에 하나 써도 됨
+
+        // id에 대한 삭제를 진행
+        //userRepository.deleteById(id);
+
+        // 객체 자체를 넘겨서 삭제를 진행
+        userRepository.delete(dbUser.get());
+    }
+
+    public void delete() {
+        userRepository.deleteAll();
+    }
 }

@@ -1,6 +1,7 @@
 package com.ea.restapi03.users;
 
 import com.fasterxml.jackson.annotation.JsonFormat;
+import com.fasterxml.jackson.annotation.JsonIgnore;
 import io.swagger.v3.oas.annotations.media.Schema;
 import jakarta.persistence.*;
 import lombok.*;
@@ -31,6 +32,7 @@ public class User {
     @Schema(title = "사용자 이메일", description = "문자열 길이 50이하로 입력해주어야 하며, NOT NULL 제약조건입니다.")
     private String email;
 
+    @JsonIgnore
     private String password;
 
     // Enum에 들어가있는 값은 male과 female이다.
