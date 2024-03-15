@@ -25,6 +25,7 @@ import java.util.List;
 public class UserController {
     private final UserService service;
     private final UserRepository userRepository;
+    private List<User> list;
 
     @Operation(summary = "사용자 전체 목록보기", description = "사용자 전체 정보를 조회할 수 있습니다.")
     @ApiResponses(
@@ -35,8 +36,9 @@ public class UserController {
     )
     @GetMapping("users")
     public ResponseEntity<List<User>> getAllUsers() {
+        list = service.getAllUsers();
 
-        List<User> list = service.getAllUsers();
+
 
         if(list.size() == 0) {
             throw new UserException(ErrorCode.NOTFOUND);
