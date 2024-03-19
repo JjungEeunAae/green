@@ -2,6 +2,8 @@ package com.ea.restapi05.member;
 
 import jakarta.validation.Valid;
 import lombok.RequiredArgsConstructor;
+import org.modelmapper.ModelMapper;
+import org.springframework.beans.BeanUtils;
 import org.springframework.data.annotation.LastModifiedDate;
 import org.springframework.web.bind.annotation.*;
 
@@ -18,7 +20,14 @@ public class MemberController {
 
     @PostMapping()
     public String member(@Valid @RequestBody MemberDTO memberDTO) {
-        System.out.println(memberDTO.toString());
+        Member member2 = new Member();
+        BeanUtils.copyProperties(memberDTO, member2);
+
+//        ModelMapper mapper = new ModelMapper();
+//        Member member = mapper.map(memberDTO, Member.class);
+//        service.save(member);
+
+        service.save(member2);
         return "member";
     }
 
