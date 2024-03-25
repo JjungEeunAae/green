@@ -21,6 +21,8 @@ spring:
   sql:
     init:
       mode: always
+  jwt:
+    secret: ea1234ea123423523525245kjhrjkljwshfklhfsh
 
 jasypt:
   encryptor:

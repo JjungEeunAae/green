@@ -1,2 +1,14 @@
-package com.ea.fileEx.file;public class FileEntity {
+package com.ea.fileEx.file;
+
+import jakarta.persistence.*;
+
+@Entity
+@Table(name = "file")
+public class FileEntity {
+    @Id
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
+    @Column(name = "id", nullable = false)
+    private Long id;
+
+    private String name;
 }
